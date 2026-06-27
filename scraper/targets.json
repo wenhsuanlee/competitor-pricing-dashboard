@@ -1,27 +1,91 @@
 {
-  "_comment": "爬蟲設定(方案A:規格自動抓+價格人工)。site=rapoo 的品項由 scrape.py 自動抓『規格』(尺寸/重量/連接等),價格一律人工維護於 data.json。url 留空者會被跳過。brand+model 必須與 data.json 完全一致。Logitech 官方商城是 JS SPA,規格抓不到,列為人工(site=manual)。",
-  "mouse": {
-    "label": "辦公滑鼠",
+  "_comment": "方案A策展:矮軸鍵盤+垂直滑鼠。site=manual 為人工策展(規格/圖人工維護);價格一律人工填。可後續對 Shopify/官網品牌加自動抓。",
+  "kb": {
+    "label": "矮軸鍵盤",
     "items": [
-      { "brand": "雷柏 Rapoo", "model": "MT760",      "site": "rapoo",  "url": "https://www.rapoo.cn/product/764" },
-      { "brand": "雷柏 Rapoo", "model": "MT760 mini", "site": "rapoo",  "url": "https://www.rapoo.cn/product/765" },
-      { "brand": "雷柏 Rapoo", "model": "MT550",      "site": "rapoo",  "url": "https://www.rapoo.cn/product/808" },
-      { "brand": "雷柏 Rapoo", "model": "MT560",      "site": "rapoo",  "url": "https://www.rapoo.cn/product/817" },
-      { "brand": "雷柏 Rapoo", "model": "MT750",      "site": "rapoo",  "url": "https://www.rapoo.cn/product/870" },
-      { "brand": "雷柏 Rapoo", "model": "MT760NL",    "site": "rapoo",  "url": "https://www.rapoo.cn/product/830" },
-      { "brand": "羅技 Logitech", "model": "MX Master 3S", "site": "manual", "url": "" }
+      {
+        "brand": "洛斐 Lofree",
+        "model": "小順青春版",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "AESCO",
+        "model": "A83 Air",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "珂芝 KZZI",
+        "model": "i75青春版",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "洛斐 Lofree",
+        "model": "小順 FLOW2",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "NuPhy",
+        "model": "Node75",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "NuPhy",
+        "model": "Kick75",
+        "site": "manual",
+        "url": ""
+      }
     ]
   },
-  "kb": {
-    "label": "辦公鍵盤",
+  "mouse": {
+    "label": "垂直滑鼠",
     "items": [
-      { "brand": "雷柏 Rapoo", "model": "K2800",  "site": "rapoo",  "url": "https://www.rapoo.cn/product/93" },
-      { "brand": "雷柏 Rapoo", "model": "E1050",  "site": "rapoo",  "url": "https://www.rapoo.cn/product/564" },
-      { "brand": "雷柏 Rapoo", "model": "E9000G", "site": "rapoo",  "url": "https://www.rapoo.cn/product/787" },
-      { "brand": "雷柏 Rapoo", "model": "E9300G", "site": "rapoo",  "url": "https://www.rapoo.cn/product/788" },
-      { "brand": "雷柏 Rapoo", "model": "E900T",  "site": "rapoo",  "url": "https://www.rapoo.cn/product/846" },
-      { "brand": "雷柏 Rapoo", "model": "NK8000", "site": "rapoo",  "url": "https://www.rapoo.cn/product/754" },
-      { "brand": "羅技 Logitech", "model": "MX Keys S", "site": "manual", "url": "" }
+      {
+        "brand": "英菲克 INPHIC",
+        "model": "X9 Pro",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "B.O.W 航世",
+        "model": "MD190L mini",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "雷柏 Rapoo",
+        "model": "MV20",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "羅技 Logitech",
+        "model": "Lift",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "多彩 Delux",
+        "model": "M618XU",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "綠聯 UGREEN",
+        "model": "MU008",
+        "site": "manual",
+        "url": ""
+      },
+      {
+        "brand": "多彩 Delux",
+        "model": "M618AIR GX",
+        "site": "manual",
+        "url": ""
+      }
     ]
   }
 }

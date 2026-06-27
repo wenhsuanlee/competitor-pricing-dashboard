@@ -1,149 +1,10 @@
 {
-  "updated_at": "2026-06-27",
+  "updated_at": "2026-06-28",
   "currency": "CNY",
-  "draft": false,
+  "draft": true,
   "categories": {
-    "mouse": {
-      "label": "辦公滑鼠",
-      "spec_fields": [
-        "连接方式",
-        "分辨率DPI",
-        "传感器",
-        "手感",
-        "滚轮",
-        "颜色"
-      ],
-      "items": [
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "MT760",
-          "price": 172,
-          "size": "125*81*47mm",
-          "weight": "约101g（不带接收器&数据线）",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0、无线2.4G、有线",
-            "分辨率DPI": "800/1000/1200/1600/2400/3200/4000DPI",
-            "传感器": "原相3220高性能引擎",
-            "手感": "右手人体工学",
-            "滚轮": "双向",
-            "颜色": "雅醺黑、蔷薇粉、云母灰"
-          },
-          "sell": "",
-          "image": "RAPOO MT760.jpg",
-          "source_url": "https://www.rapoo.cn/product/764"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "MT760 mini",
-          "price": 176.67,
-          "size": "115*74*42mm",
-          "weight": "约88g（不带接收器&数据线）",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0、无线2.4G、有线",
-            "分辨率DPI": "800/1000/1200/1600/2400/3200/4000DPI",
-            "传感器": "原相3220高性能引擎",
-            "手感": "右手人体工学",
-            "滚轮": "双向",
-            "颜色": "雅醺黑、蔷薇粉、云母灰"
-          },
-          "sell": "",
-          "image": "images/rapoo-mt760-mini.png",
-          "source_url": "https://www.rapoo.cn/product/765"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "MT550",
-          "price": 154.44,
-          "size": "103*69*43mm",
-          "weight": "79g（以上不带接收器&数据线）",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0、无线24G和有线",
-            "分辨率DPI": "预设800/1000/1200/1600/2400/3200/4000DPI",
-            "传感器": "原相3220高性能引擎",
-            "手感": "右手人体工学",
-            "滚轮": "双向",
-            "颜色": "—"
-          },
-          "sell": "",
-          "image": "images/rapoo-mt550.png",
-          "source_url": "https://www.rapoo.cn/product/808"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "MT560",
-          "price": 165.56,
-          "size": "106*70*44mm",
-          "weight": "83g（不带接收器&数据线）",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0、无线2.4G和有线",
-            "分辨率DPI": "800/1000/1200/1600/2400/3200/4000DPI",
-            "传感器": "原相3220高性能引擎",
-            "手感": "右手人体工学",
-            "滚轮": "双向",
-            "颜色": "素黑、芽绿、胭蓝、暖茶、黛紫"
-          },
-          "sell": "",
-          "image": "images/rapoo-mt560.png",
-          "source_url": "https://www.rapoo.cn/product/817"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "MT750",
-          "price": 210,
-          "size": "123*86*49mm",
-          "weight": "约124g（不含接收器&数据线）",
-          "specs_detail": {
-            "连接方式": "无线2.4G、蓝牙5.0和有线",
-            "分辨率DPI": "预设800/1000/1200/1600/2400/3200/4000DPI",
-            "传感器": "原相3220高性能引擎",
-            "手感": "右手人体工学",
-            "滚轮": "双向",
-            "颜色": "—"
-          },
-          "sell": "",
-          "image": "images/rapoo-mt750.png",
-          "source_url": "https://www.rapoo.cn/product/870"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "MT760NL",
-          "price": 319,
-          "size": "约125*81*47mm",
-          "weight": "105g（不带接收器&数据线）",
-          "specs_detail": {
-            "连接方式": "星闪、蓝牙5.0和有线",
-            "分辨率DPI": "预设800/1200/1600/2400/3200/6400/12000DPI",
-            "传感器": "原相3311高性能引擎",
-            "手感": "右手人体工学",
-            "滚轮": "双向",
-            "颜色": "—"
-          },
-          "sell": "",
-          "image": "images/rapoo-mt760nl.png",
-          "source_url": "https://www.rapoo.cn/product/830"
-        },
-        {
-          "brand": "羅技 Logitech",
-          "model": "MX Master 3S",
-          "price": 479,
-          "size": "124.9×84.3×51 mm",
-          "weight": "141 g",
-          "specs_detail": {
-            "连接方式": "蓝牙 + Logi Bolt 接收器双模",
-            "分辨率DPI": "200-8000 DPI",
-            "传感器": "任意表面追踪（含玻璃）",
-            "手感": "右手人体工学",
-            "滚轮": "MagSpeed 电磁滚轮",
-            "颜色": "石墨黑 / 浅灰 / 珍珠白"
-          },
-          "sell": "",
-          "image": "images/logitech-mx-master-3s.png",
-          "source_url": "https://www.logitech.com.cn/zh-cn/shop/p/mx-master-3s.html"
-        }
-      ]
-    },
     "kb": {
-      "label": "辦公鍵盤",
+      "label": "矮軸鍵盤",
       "spec_fields": [
         "连接方式",
         "按键数",
@@ -154,130 +15,251 @@
       ],
       "items": [
         {
-          "brand": "雷柏 Rapoo",
-          "model": "K2800",
-          "price": 262.9,
-          "size": "376*146*23mm",
-          "weight": "434g",
+          "brand": "洛斐 Lofree",
+          "model": "小順青春版",
+          "price": null,
+          "size": "316.8*138*23.5 mm",
+          "weight": "550 g",
           "specs_detail": {
-            "连接方式": "无线2.4G",
-            "按键数": "78",
-            "按键类型": "—",
-            "按键行程": "1.5mm",
-            "按键寿命": "500万次",
-            "供电续航": "12个月"
+            "连接方式": "蓝牙5.4/2.4G/有线 三模",
+            "按键数": "84键",
+            "按键类型": "凯华x洛斐 全POM矮轴(轻灵轴)",
+            "按键行程": "全程2.8mm/触发1.2mm",
+            "按键寿命": "5000万次",
+            "供电续航": "2000mAh,关灯约80小时"
           },
           "sell": "",
-          "image": "images/rapoo-k2800.png",
-          "source_url": "https://www.rapoo.cn/product/93"
+          "image": "images/lofree-flow-lite84.jpg",
+          "source_url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard"
         },
         {
-          "brand": "雷柏 Rapoo",
-          "model": "E1050",
-          "price": 59,
-          "size": "392*125.6*28.9mm",
-          "weight": "约391g",
+          "brand": "AESCO",
+          "model": "A83 Air",
+          "price": null,
+          "size": "315*132*30 mm",
+          "weight": "1030 g",
           "specs_detail": {
-            "连接方式": "无线2.4G",
-            "按键数": "104",
-            "按键类型": "—",
+            "连接方式": "蓝牙5.0/2.4G/有线 三模",
+            "按键数": "83键",
+            "按键类型": "凯华定制全POM矮轴(薄荷轴)",
+            "按键行程": "全程2.8mm/触发1.2mm",
+            "按键寿命": "5000万次",
+            "供电续航": "3800mAh,最长630小时"
+          },
+          "sell": "",
+          "image": "images/aesco-a83-air.png",
+          "source_url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard"
+        },
+        {
+          "brand": "珂芝 KZZI",
+          "model": "i75青春版",
+          "price": null,
+          "size": "—",
+          "weight": "—",
+          "specs_detail": {
+            "连接方式": "蓝牙/2.4G/有线 三模",
+            "按键数": "87键(75%配列)",
+            "按键类型": "矮轴(白雪轴),全键热插拔",
             "按键行程": "—",
             "按键寿命": "—",
-            "供电续航": "12个月"
-          },
-          "sell": "",
-          "image": "images/rapoo-e1050.png",
-          "source_url": "https://www.rapoo.cn/product/564"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "E9000G",
-          "price": 94,
-          "size": "284*119*20mm",
-          "weight": "约240g（不含接收器与电池）",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0、4.0和无线2.4G",
-            "按键数": "78键",
-            "按键类型": "—",
-            "按键行程": "1.5mm",
-            "按键寿命": "500万次",
-            "供电续航": "12个月"
-          },
-          "sell": "",
-          "image": "images/rapoo-e9000g.png",
-          "source_url": "https://www.rapoo.cn/product/787"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "E9300G",
-          "price": 121.11,
-          "size": "363*119*20mm",
-          "weight": "约310g（不含接收器与电池）",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0、4.0和无线2.4G",
-            "按键数": "99键",
-            "按键类型": "—",
-            "按键行程": "1.5mm",
-            "按键寿命": "500万次",
-            "供电续航": "12个月"
-          },
-          "sell": "",
-          "image": "images/rapoo-e9300g.png",
-          "source_url": "https://www.rapoo.cn/product/788"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "E900T",
-          "price": 198,
-          "size": "282*104*20mm",
-          "weight": "约218g（不含接收器&电池）",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0、4.0和无线2.4G",
-            "按键数": "73键",
-            "按键类型": "—",
-            "按键行程": "1.5±0.2mm",
-            "按键寿命": "500万次",
-            "供电续航": "至高13个月"
-          },
-          "sell": "",
-          "image": "images/rapoo-e900t.png",
-          "source_url": "https://www.rapoo.cn/product/846"
-        },
-        {
-          "brand": "雷柏 Rapoo",
-          "model": "NK8000",
-          "price": 47.92,
-          "size": "295.2*136.8*23.4mm",
-          "weight": "约354g",
-          "specs_detail": {
-            "连接方式": "有线",
-            "按键数": "80键",
-            "按键类型": "薄膜",
-            "按键行程": "—",
-            "按键寿命": "1000万次",
             "供电续航": "—"
           },
           "sell": "",
-          "image": "images/rapoo-nk8000.png",
-          "source_url": "https://www.rapoo.cn/product/754"
+          "image": "images/kzzi-i75-youth.jpg",
+          "source_url": "https://diy.zol.com.cn/1009/10093646.html"
+        },
+        {
+          "brand": "洛斐 Lofree",
+          "model": "小順 FLOW2",
+          "price": null,
+          "size": "316.8*138*23.5 mm(84键)",
+          "weight": "550 g(84键)",
+          "specs_detail": {
+            "连接方式": "蓝牙/2.4G/有线 三模",
+            "按键数": "68/84/100键 可选",
+            "按键类型": "凯华Cloud系列矮轴,热插拔/Gasket",
+            "按键行程": "—",
+            "按键寿命": "—",
+            "供电续航": "3000mAh(84键)"
+          },
+          "sell": "",
+          "image": "images/lofree-flow2.png",
+          "source_url": "https://www.lofree.co/products/flow-2-100-low-profile-mechanical-keyboard"
+        },
+        {
+          "brand": "NuPhy",
+          "model": "Node75",
+          "price": null,
+          "size": "—",
+          "weight": "—",
+          "specs_detail": {
+            "连接方式": "蓝牙5.0/2.4G/有线 三模",
+            "按键数": "84键 75%配列",
+            "按键类型": "矮轴,全键热插拔(45g红/50g茶/42g粉)",
+            "按键行程": "—",
+            "按键寿命": "—",
+            "供电续航": "3000mAh,关灯约1000小时"
+          },
+          "sell": "",
+          "image": "images/nuphy-node75.png",
+          "source_url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard"
+        },
+        {
+          "brand": "NuPhy",
+          "model": "Kick75",
+          "price": null,
+          "size": "333*143.3*33.6 mm",
+          "weight": "877 g(矮軸)",
+          "specs_detail": {
+            "连接方式": "蓝牙5.0/2.4G/有线 三模",
+            "按键数": "80键 ANSI 75%",
+            "按键类型": "Nano矮轴/Max高轴,Gateron热插拔",
+            "按键行程": "Nano矮轴总程3.5mm",
+            "按键寿命": "—",
+            "供电续航": "2500mAh,全灯关最长360小时"
+          },
+          "sell": "",
+          "image": "images/nuphy-kick75.jpg",
+          "source_url": "https://nuphy.com.tw/products/nuphy-kick75-hybrid-profile-custom-wireless-mechanical-keyboard"
+        }
+      ]
+    },
+    "mouse": {
+      "label": "垂直滑鼠",
+      "spec_fields": [
+        "连接方式",
+        "分辨率DPI",
+        "传感器",
+        "手感",
+        "滚轮",
+        "颜色"
+      ],
+      "items": [
+        {
+          "brand": "英菲克 INPHIC",
+          "model": "X9 Pro",
+          "price": null,
+          "size": "124*78*74 mm",
+          "weight": "95±5 g",
+          "specs_detail": {
+            "连接方式": "2.4G/蓝牙5.0/有线 三模",
+            "分辨率DPI": "800-12000 DPI 多档",
+            "传感器": "—",
+            "手感": "垂直58°/人体工学/静音",
+            "滚轮": "—",
+            "颜色": "黑色/白色"
+          },
+          "sell": "",
+          "image": "images/inphic-x9pro.jpg",
+          "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse"
+        },
+        {
+          "brand": "B.O.W 航世",
+          "model": "MD190L mini",
+          "price": null,
+          "size": "72.28*76.42*120.24 mm",
+          "weight": "—",
+          "specs_detail": {
+            "连接方式": "2.4G/蓝牙 双模",
+            "分辨率DPI": "800/1200/1600/2400 DPI",
+            "传感器": "—",
+            "手感": "垂直/人体工学/静音",
+            "滚轮": "3D防滑滚轮",
+            "颜色": "—"
+          },
+          "sell": "",
+          "image": "images/bow-md190l-mini.jpg",
+          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "MV20",
+          "price": null,
+          "size": "117*76*69 mm",
+          "weight": "约90 g",
+          "specs_detail": {
+            "连接方式": "无线2.4G",
+            "分辨率DPI": "800/1000/1200/1600 DPI",
+            "传感器": "光学引擎",
+            "手感": "垂直/人体工学",
+            "滚轮": "—",
+            "颜色": "商务黑"
+          },
+          "sell": "",
+          "image": "images/rapoo-mv20.png",
+          "source_url": "https://www.rapoo.cn/product/589"
         },
         {
           "brand": "羅技 Logitech",
-          "model": "MX Keys S",
-          "price": 529,
-          "size": "430.2×131.63×20.5 mm",
-          "weight": "810 g",
+          "model": "Lift",
+          "price": null,
+          "size": "70*71*108 mm",
+          "weight": "124 g",
           "specs_detail": {
-            "连接方式": "蓝牙 + Logi Bolt 接收器双模（可连 3 台）",
-            "按键数": "全尺寸（约 109 键）",
-            "按键类型": "剪刀脚 / 球面凹型键帽",
-            "按键行程": "低行程",
-            "按键寿命": "—",
-            "供电续航": "USB-C 充电（满电约 10 天 / 关背光 5 个月）"
+            "连接方式": "蓝牙BLE + Logi Bolt 双模(3通道)",
+            "分辨率DPI": "400-4000 DPI",
+            "传感器": "Pluto One 光学",
+            "手感": "57°垂直/人体工学(中小手)",
+            "滚轮": "SmartWheel 智能滚轮",
+            "颜色": "石墨黑/珍珠白/玫瑰粉"
           },
           "sell": "",
-          "image": "images/logitech-mx-keys-s.png",
-          "source_url": "https://www.logitech.com.cn/zh-cn/shop/p/mx-keys-s.html"
+          "image": "images/logitech-lift.png",
+          "source_url": "https://www.logitech.com/zh-tw/products/mice/lift-vertical-ergonomic-mouse.html"
+        },
+        {
+          "brand": "多彩 Delux",
+          "model": "M618XU",
+          "price": null,
+          "size": "—",
+          "weight": "约225 g",
+          "specs_detail": {
+            "连接方式": "有线(USB)",
+            "分辨率DPI": "最高4000 DPI",
+            "传感器": "原相 PMW3610 光学",
+            "手感": "垂直/人体工学",
+            "滚轮": "—",
+            "颜色": "—"
+          },
+          "sell": "",
+          "image": "images/delux-m618xu.jpg",
+          "source_url": "https://www.deluxworld.com/pro-detail-M618X.html"
+        },
+        {
+          "brand": "綠聯 UGREEN",
+          "model": "MU008",
+          "price": null,
+          "size": "135*83*78 mm",
+          "weight": "130 g(含电池)",
+          "specs_detail": {
+            "连接方式": "无线2.4G/蓝牙5.0 双模",
+            "分辨率DPI": "1000/1600/2000/4000 DPI",
+            "传感器": "3D光学传感器",
+            "手感": "人体工学垂直(右手)",
+            "滚轮": "有",
+            "颜色": "黑色/灰色"
+          },
+          "sell": "",
+          "image": "images/ugreen-mu008.jpg",
+          "source_url": "https://www.lulian.cn/product/1068.html"
+        },
+        {
+          "brand": "多彩 Delux",
+          "model": "M618AIR GX",
+          "price": null,
+          "size": "—",
+          "weight": "—",
+          "specs_detail": {
+            "连接方式": "无线2.4G(干电池版)",
+            "分辨率DPI": "最高4000 DPI",
+            "传感器": "—",
+            "手感": "垂直/人体工学/静音(中小手)",
+            "滚轮": "—",
+            "颜色": "黑/樱花粉/薰衣紫/极地白/松叶绿"
+          },
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.deluxworld.com/"
         }
       ]
     }

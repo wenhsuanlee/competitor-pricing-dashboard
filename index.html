@@ -36,6 +36,13 @@
   select{background:var(--panel);color:var(--txt);border:1px solid var(--line);
     border-radius:8px;padding:7px 10px;font-size:13px}
   label.sortlbl{color:var(--muted);font-size:12.5px;margin-right:-4px}
+  /* 品牌篩選 */
+  .brandbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 18px}
+  .brandbar .lbl{color:var(--muted);font-size:12.5px;margin-right:2px}
+  .chip{background:var(--panel);border:1px solid var(--line);color:var(--muted);
+    padding:5px 13px;border-radius:999px;font-size:12.5px;cursor:pointer;line-height:1.4}
+  .chip:hover{border-color:var(--accent)}
+  .chip.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
   /* cards */
   .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
   .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
@@ -113,10 +120,12 @@
     </div>
   </div>
 
+  <div class="brandbar" id="brandbar"></div>
+
   <div id="content"></div>
 
   <footer>
-    資料來源:各品牌官網(規格自動更新)· 價格為人工維護 ·
+    資料為人工策展整理(規格/圖取自品牌官網或電商)· 價格為人工維護 ·
     <span id="foot-updated"></span>
   </footer>
 </div>
@@ -140,6 +149,7 @@ const FALLBACK = {
 };
 
 let DATA = null, curCat = null, curView = "cards", curSort = "default";
+let curBrands = new Set();   // 空 = 全部品牌
 
 const $ = s => document.querySelector(s);
 const fmtPrice = (p, cur) => (p===null||p===""||p===0)
@@ -161,7 +171,7 @@ async function boot(){
   curCat = Object.keys(DATA.categories)[0];
   $('#sub').textContent = `更新日期 ${DATA.updated_at} · 幣別 ${DATA.currency}`;
   $('#foot-updated').textContent = `更新於 ${DATA.updated_at}`;
-  buildCatSeg(); bindControls(); render();
+  buildCatSeg(); bindControls(); buildBrandFilter(); render();
 }
 
 function showBanner(html, type){
@@ -175,8 +185,25 @@ function buildCatSeg(){
     const btn=document.createElement('button');
     btn.textContent=c.label; btn.dataset.cat=k;
     if(k===curCat) btn.classList.add('active');
-    btn.onclick=()=>{curCat=k; [...seg.children].forEach(x=>x.classList.toggle('active',x.dataset.cat===k)); render();};
+    btn.onclick=()=>{curCat=k; curBrands.clear();
+      [...seg.children].forEach(x=>x.classList.toggle('active',x.dataset.cat===k));
+      buildBrandFilter(); render();};
     seg.appendChild(btn);
+  });
+}
+
+function buildBrandFilter(){
+  const bar=$('#brandbar'); bar.innerHTML='';
+  const brands=[...new Set(DATA.categories[curCat].items.map(i=>i.brand))];
+  const lbl=document.createElement('span'); lbl.className='lbl'; lbl.textContent='品牌'; bar.appendChild(lbl);
+  const mk=(text,active,on)=>{const c=document.createElement('span');c.className='chip'+(active?' on':'');c.textContent=text;c.onclick=on;return c;};
+  // 全部
+  bar.appendChild(mk('全部', curBrands.size===0, ()=>{curBrands.clear(); buildBrandFilter(); render();}));
+  brands.forEach(b=>{
+    bar.appendChild(mk(b, curBrands.has(b), ()=>{
+      curBrands.has(b)?curBrands.delete(b):curBrands.add(b);
+      buildBrandFilter(); render();
+    }));
   });
 }
 function bindControls(){
@@ -219,10 +246,12 @@ function renderKPI(items, cur){
 
 function render(){
   const cat=DATA.categories[curCat];
-  const items=sortItems(cat.items);
-  renderKPI(cat.items, DATA.currency);
+  let items=cat.items;
+  if(curBrands.size) items=items.filter(i=>curBrands.has(i.brand));
+  items=sortItems(items);
+  renderKPI(items, DATA.currency);
   const c=$('#content');
-  if(!items.length){ c.innerHTML='<div class="empty">此品類沒有資料。</div>'; return; }
+  if(!items.length){ c.innerHTML='<div class="empty">沒有符合篩選的品項。</div>'; return; }
   const fields=cat.spec_fields||[];
   if(curView==='cards') c.innerHTML=viewCards(items, DATA.currency, fields);
   else if(curView==='table') c.innerHTML=viewTable(items, DATA.currency, fields);
