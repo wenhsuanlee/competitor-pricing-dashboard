@@ -51,7 +51,44 @@ POLITE_DELAY = 1.5          # 每次請求間隔(秒)
 
 # 規格欄位以外都視為「人工維護」,爬蟲不可覆蓋
 HUMAN_FIELDS = ("price", "sell", "image")
-SPEC_FIELDS = ("size", "weight", "specs")
+
+# 規格細項欄位:滑鼠/鍵盤各自不同。每個欄位 = (顯示欄名, [雷柏頁面可能的標籤別名])
+# 前端依各品類的 spec_fields 動態長出對照表欄位。
+SPEC_SCHEMA = {
+    "mouse": [
+        ("连接方式",   ["连接方式", "传输方式"]),
+        ("分辨率DPI",  ["分辨率", "灵敏度", "最高DPI", "DPI"]),
+        ("传感器",     ["工作方式", "传感器", "引擎"]),
+        ("手感",       ["手感类型", "手感"]),
+        ("滚轮",       ["滚轮方向", "滚轮"]),
+        ("颜色",       ["产品颜色", "颜色"]),
+    ],
+    "kb": [
+        ("连接方式",   ["连接方式", "传输方式"]),
+        ("按键数",     ["按键数", "键数"]),
+        ("按键类型",   ["按键类型", "轴体"]),
+        ("按键行程",   ["按键行程"]),
+        ("按键寿命",   ["按键寿命"]),
+        ("供电续航",   ["续航时长", "供电模式", "供电方式", "工作电压", "电池"]),
+    ],
+}
+
+
+def spec_fields_of(cat_key):
+    return [canon for canon, _ in SPEC_SCHEMA.get(cat_key, [])]
+
+
+def build_specs_detail(cat_key, pairs):
+    """依品類 schema,從雷柏配對挑出細項欄位;找不到填 '—'。"""
+    detail = {}
+    for canon, aliases in SPEC_SCHEMA.get(cat_key, []):
+        val = ""
+        for a in aliases:
+            if pairs.get(a):
+                val = pairs[a]
+                break
+        detail[canon] = val or "—"
+    return detail
 
 
 def norm_price(v):
@@ -113,7 +150,8 @@ def extract_rapoo(html: str) -> dict:
             <p><span>产品尺寸</span><span>125*81*47mm</span></p>
             <p><span>产品重量</span><span>约101g（...）</span></p>
             <p><span>连接方式</span><span>蓝牙5.0、无线2.4G、有线</span></p> ...
-    回傳 {size, weight, specs}(只有規格,不含價格)。
+    回傳 {size, weight, pairs}:size/weight 為字串,pairs 為頁面上所有「標籤:值」配對
+    (供 build_specs_detail() 依品類挑出細項欄位)。
     """
     soup = BeautifulSoup(html, "lxml")
     pairs: dict[str, str] = {}
@@ -126,24 +164,11 @@ def extract_rapoo(html: str) -> dict:
                 if key and val and key not in pairs:
                     pairs[key] = val
 
-    size = pairs.get("产品尺寸", "")
-    weight = pairs.get("产品重量", "")
-    # specs:挑幾個有意義的規格(排除尺寸/重量),組成簡短描述
-    spec_keys = ["连接方式", "手感类型", "按键数", "DPI", "最高DPI", "电池",
-                 "续航", "接口类型", "轴体", "键数", "防泼溅", "工作方式"]
-    parts = []
-    for k in spec_keys:
-        if k in pairs:
-            parts.append(f"{k}：{pairs[k]}")
-    # 補:把尚未收錄、看起來有值的前幾項也帶上,避免漏關鍵規格
-    for k, v in pairs.items():
-        if k in ("产品尺寸", "产品重量"):
-            continue
-        kv = f"{k}：{v}"
-        if kv not in parts and len(parts) < 5:
-            parts.append(kv)
-    specs = " · ".join(parts[:5])
-    return {"size": size, "weight": weight, "specs": specs}
+    return {
+        "size": pairs.get("产品尺寸", ""),
+        "weight": pairs.get("产品重量", ""),
+        "pairs": pairs,
+    }
 
 
 EXTRACTORS = {"rapoo": extract_rapoo}
@@ -202,7 +227,7 @@ def main() -> int:
                 "price": norm_price(prev.get("price")),
                 "size": prev.get("size", "—"),
                 "weight": prev.get("weight", "—"),
-                "specs": prev.get("specs", "—"),
+                "specs_detail": prev.get("specs_detail", {}),
                 "sell": prev.get("sell", ""),
                 "image": prev.get("image", ""),
                 "source_url": url or prev.get("source_url", ""),
@@ -221,11 +246,14 @@ def main() -> int:
                             spec = EXTRACTORS[site](html)
                             # 合理性檢查:至少要有尺寸或重量,否則視為解析失敗→降級
                             if spec.get("size") or spec.get("weight"):
-                                for f in SPEC_FIELDS:
-                                    if spec.get(f):
-                                        row[f] = spec[f]
+                                if spec.get("size"):
+                                    row["size"] = spec["size"]
+                                if spec.get("weight"):
+                                    row["weight"] = spec["weight"]
+                                row["specs_detail"] = build_specs_detail(cat_key, spec["pairs"])
                                 scraped_ok += 1
-                                print(f"      ✓ size={row['size']} weight={row['weight']}")
+                                print(f"      ✓ size={row['size']} weight={row['weight']} "
+                                      f"specs={row['specs_detail']}")
                             else:
                                 scrape_fail += 1
                                 print(f"      ✗ 解析不到規格,保留舊值")
@@ -245,7 +273,11 @@ def main() -> int:
 
             items_out.append(row)
 
-        out["categories"][cat_key] = {"label": cat.get("label", cat_key), "items": items_out}
+        out["categories"][cat_key] = {
+            "label": cat.get("label", cat_key),
+            "spec_fields": spec_fields_of(cat_key),
+            "items": items_out,
+        }
 
     # draft 判定:有任何抓取失敗或缺價格 → 標 draft 提醒前端
     out["draft"] = bool(scrape_fail > 0 or no_price > 0)

@@ -51,6 +51,9 @@
   .meta{font-size:12.5px;color:var(--muted)}
   .meta b{color:var(--txt);font-weight:600}
   .specs{font-size:12.5px;color:#cbd5e1;border-top:1px solid var(--line);padding-top:8px}
+  .specs .specline{display:flex;gap:8px;margin:3px 0}
+  .specs .sk{color:var(--muted);flex:0 0 68px}
+  .specs .sv{color:#cbd5e1;flex:1}
   .sell{font-size:12.5px;color:#fcd34d}
   .card a.src{font-size:12px;color:var(--accent);text-decoration:none;margin-top:auto}
   /* table */
@@ -123,15 +126,15 @@
 const FALLBACK = {
   updated_at: "範例資料", currency: "CNY", draft: true, _fallback: true,
   categories: {
-    mouse: { label: "辦公滑鼠", items: [
+    mouse: { label: "辦公滑鼠", spec_fields:["连接方式","分辨率DPI","传感器","手感","滚轮","颜色"], items: [
       { brand:"雷柏 Rapoo", model:"MT760", price:null, size:"125×81×47 mm", weight:"约101g",
-        specs:"蓝牙5.0 / 无线2.4G / 有线 · 右手人体工学", sell:"", image:"", source_url:"" },
+        specs_detail:{"连接方式":"蓝牙5.0 / 无线2.4G / 有线","分辨率DPI":"4000DPI","传感器":"原相3220","手感":"右手人体工学","滚轮":"双向","颜色":"黑/粉/灰"}, sell:"", image:"", source_url:"" },
       { brand:"羅技 Logitech", model:"MX Master 3S", price:749, size:"124.9×84.3×51 mm", weight:"141 g",
-        specs:"蓝牙 + Bolt 双模 · 8000 DPI", sell:"", image:"", source_url:"" }
+        specs_detail:{"连接方式":"蓝牙 + Bolt 双模","分辨率DPI":"8000DPI","传感器":"任意表面","手感":"右手人体工学","滚轮":"MagSpeed","颜色":"石墨黑"}, sell:"", image:"", source_url:"" }
     ]},
-    kb: { label: "辦公鍵盤", items: [
+    kb: { label: "辦公鍵盤", spec_fields:["连接方式","按键数","按键类型","按键行程","按键寿命","供电续航"], items: [
       { brand:"雷柏 Rapoo", model:"E9000G", price:null, size:"284×119×20 mm", weight:"约240g",
-        specs:"多模式无线 · 刀锋键盘", sell:"", image:"", source_url:"" }
+        specs_detail:{"连接方式":"多模式无线","按键数":"78键","按键类型":"刀锋","按键行程":"1.5mm","按键寿命":"500万次","供电续航":"2节AAA电池"}, sell:"", image:"", source_url:"" }
     ]}
   }
 };
@@ -220,13 +223,22 @@ function render(){
   renderKPI(cat.items, DATA.currency);
   const c=$('#content');
   if(!items.length){ c.innerHTML='<div class="empty">此品類沒有資料。</div>'; return; }
-  if(curView==='cards') c.innerHTML=viewCards(items, DATA.currency);
-  else if(curView==='table') c.innerHTML=viewTable(items, DATA.currency);
+  const fields=cat.spec_fields||[];
+  if(curView==='cards') c.innerHTML=viewCards(items, DATA.currency, fields);
+  else if(curView==='table') c.innerHTML=viewTable(items, DATA.currency, fields);
   else c.innerHTML=viewChart(items, DATA.currency);
 }
 
-function viewCards(items, cur){
-  return '<div class="cards">'+items.map(i=>`
+function specLines(sd, fields){
+  const keys=(fields&&fields.length)?fields:Object.keys(sd||{});
+  return keys.filter(f=>sd&&sd[f]&&sd[f]!=='—')
+    .map(f=>`<div class="specline"><span class="sk">${f}</span><span class="sv">${sd[f]}</span></div>`).join('');
+}
+
+function viewCards(items, cur, fields){
+  return '<div class="cards">'+items.map(i=>{
+    const detail=specLines(i.specs_detail, fields);
+    return `
     <div class="card">
       <div class="thumb">${i.image?`<img src="${i.image}" alt="">`:'🖱️'}</div>
       <div>
@@ -235,15 +247,20 @@ function viewCards(items, cur){
       </div>
       ${fmtPrice(i.price, cur)}
       <div class="meta"><b>尺寸</b> ${i.size||'—'} &nbsp;·&nbsp; <b>重量</b> ${i.weight||'—'}</div>
-      ${i.specs&&i.specs!=='—'?`<div class="specs">${i.specs}</div>`:''}
+      ${detail?`<div class="specs">${detail}</div>`:''}
       ${i.sell?`<div class="sell">${i.sell}</div>`:''}
       ${i.source_url?`<a class="src" href="${i.source_url}" target="_blank" rel="noopener">來源頁 ↗</a>`:''}
-    </div>`).join('')+'</div>';
+    </div>`;}).join('')+'</div>';
 }
 
-function viewTable(items, cur){
-  const rows=items.map(i=>`
-    <tr>
+function viewTable(items, cur, fields){
+  fields=fields||[];
+  const head='<th>品牌</th><th>型號</th><th class="num">價格</th><th>尺寸</th><th>重量</th>'
+    + fields.map(f=>`<th>${f}</th>`).join('');
+  const rows=items.map(i=>{
+    const sd=i.specs_detail||{};
+    const sc=fields.map(f=>`<td>${sd[f]||'—'}</td>`).join('');
+    return `<tr>
       <td>${i.brand||''}</td>
       <td><b>${i.model||''}</b></td>
       <td class="num">${(i.price===null||i.price===''||i.price===0)
@@ -251,11 +268,10 @@ function viewTable(items, cur){
         :`<span class="pill">${cur} ${Number(i.price).toLocaleString()}</span>`}</td>
       <td>${i.size||'—'}</td>
       <td>${i.weight||'—'}</td>
-      <td class="specs-cell">${i.specs||'—'}</td>
-    </tr>`).join('');
+      ${sc}
+    </tr>`;}).join('');
   return `<div class="tablewrap"><table>
-    <thead><tr><th>品牌</th><th>型號</th><th class="num">價格</th><th>尺寸</th><th>重量</th><th>規格</th></tr></thead>
-    <tbody>${rows}</tbody></table></div>`;
+    <thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function viewChart(items, cur){
