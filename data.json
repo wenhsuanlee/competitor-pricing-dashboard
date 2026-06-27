@@ -17,7 +17,7 @@
         {
           "brand": "洛斐 Lofree",
           "model": "小順青春版",
-          "price": null,
+          "price": "399",
           "size": "316.8*138*23.5 mm",
           "weight": "550 g",
           "specs_detail": {
@@ -35,7 +35,7 @@
         {
           "brand": "AESCO",
           "model": "A83 Air",
-          "price": null,
+          "price": "699",
           "size": "315*132*30 mm",
           "weight": "1030 g",
           "specs_detail": {
@@ -53,7 +53,7 @@
         {
           "brand": "珂芝 KZZI",
           "model": "i75青春版",
-          "price": null,
+          "price": "299",
           "size": "—",
           "weight": "—",
           "specs_detail": {
@@ -71,7 +71,7 @@
         {
           "brand": "洛斐 Lofree",
           "model": "小順 FLOW2",
-          "price": null,
+          "price": "699",
           "size": "316.8*138*23.5 mm(84键)",
           "weight": "550 g(84键)",
           "specs_detail": {
@@ -89,7 +89,7 @@
         {
           "brand": "NuPhy",
           "model": "Node75",
-          "price": null,
+          "price": "469",
           "size": "—",
           "weight": "—",
           "specs_detail": {
@@ -107,7 +107,7 @@
         {
           "brand": "NuPhy",
           "model": "Kick75",
-          "price": null,
+          "price": "799",
           "size": "333*143.3*33.6 mm",
           "weight": "877 g(矮軸)",
           "specs_detail": {
@@ -139,7 +139,7 @@
         {
           "brand": "英菲克 INPHIC",
           "model": "X9 Pro",
-          "price": null,
+          "price": "129",
           "size": "124*78*74 mm",
           "weight": "95±5 g",
           "specs_detail": {
@@ -158,7 +158,7 @@
         {
           "brand": "B.O.W 航世",
           "model": "MD190L mini",
-          "price": null,
+          "price": "159",
           "size": "72.28*76.42*120.24 mm",
           "weight": "—",
           "specs_detail": {
@@ -177,7 +177,7 @@
         {
           "brand": "雷柏 Rapoo",
           "model": "MV20",
-          "price": null,
+          "price": "79",
           "size": "117*76*69 mm",
           "weight": "约90 g",
           "specs_detail": {
@@ -196,7 +196,7 @@
         {
           "brand": "羅技 Logitech",
           "model": "Lift",
-          "price": null,
+          "price": "599",
           "size": "70*71*108 mm",
           "weight": "124 g",
           "specs_detail": {
@@ -215,7 +215,7 @@
         {
           "brand": "多彩 Delux",
           "model": "M618XU",
-          "price": null,
+          "price": "99",
           "size": "135.5*100*87 mm",
           "weight": "约225 g",
           "specs_detail": {
@@ -234,7 +234,7 @@
         {
           "brand": "綠聯 UGREEN",
           "model": "MU008",
-          "price": null,
+          "price": "119",
           "size": "135*83*78 mm",
           "weight": "130 g(含电池)",
           "specs_detail": {
@@ -253,7 +253,7 @@
         {
           "brand": "多彩 Delux",
           "model": "M618AIR GX",
-          "price": null,
+          "price": "69",
           "size": "115*80.7*75.2 mm",
           "weight": "—",
           "specs_detail": {
