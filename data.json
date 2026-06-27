@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-06-28",
   "currency": "CNY",
-  "draft": true,
+  "draft": false,
   "categories": {
     "kb": {
       "label": "矮軸鍵盤",
@@ -15,45 +15,9 @@
       ],
       "items": [
         {
-          "brand": "洛斐 Lofree",
-          "model": "小順青春版",
-          "price": "399",
-          "size": "316.8*138*23.5 mm",
-          "weight": "550 g",
-          "specs_detail": {
-            "连接方式": "蓝牙5.4/2.4G/有线 三模",
-            "按键数": "84键",
-            "按键类型": "凯华x洛斐 全POM矮轴(轻灵轴)",
-            "按键行程": "全程2.8mm/触发1.2mm",
-            "按键寿命": "5000万次",
-            "供电续航": "2000mAh,关灯约80小时"
-          },
-          "sell": "",
-          "image": "images/lofree-flow-lite84.jpg",
-          "source_url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard"
-        },
-        {
-          "brand": "AESCO",
-          "model": "A83 Air",
-          "price": "699",
-          "size": "315*132*30 mm",
-          "weight": "1030 g",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0/2.4G/有线 三模",
-            "按键数": "83键",
-            "按键类型": "凯华定制全POM矮轴(薄荷轴)",
-            "按键行程": "全程2.8mm/触发1.2mm",
-            "按键寿命": "5000万次",
-            "供电续航": "3800mAh,最长630小时"
-          },
-          "sell": "",
-          "image": "images/aesco-a83-air.png",
-          "source_url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard"
-        },
-        {
           "brand": "珂芝 KZZI",
           "model": "i75青春版",
-          "price": "299",
+          "price": 299,
           "size": "—",
           "weight": "—",
           "specs_detail": {
@@ -70,8 +34,62 @@
         },
         {
           "brand": "洛斐 Lofree",
+          "model": "小順青春版",
+          "price": 399,
+          "size": "316.8*138*23.5 mm",
+          "weight": "550 g",
+          "specs_detail": {
+            "连接方式": "蓝牙5.4/2.4G/有线 三模",
+            "按键数": "84键",
+            "按键类型": "凯华x洛斐 全POM矮轴(轻灵轴)",
+            "按键行程": "全程2.8mm/触发1.2mm",
+            "按键寿命": "5000万次",
+            "供电续航": "2000mAh,关灯约80小时"
+          },
+          "sell": "",
+          "image": "images/lofree-flow-lite84.jpg",
+          "source_url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard"
+        },
+        {
+          "brand": "NuPhy",
+          "model": "Node75",
+          "price": 469,
+          "size": "—",
+          "weight": "—",
+          "specs_detail": {
+            "连接方式": "蓝牙5.0/2.4G/有线 三模",
+            "按键数": "84键 75%配列",
+            "按键类型": "矮轴,全键热插拔(45g红/50g茶/42g粉)",
+            "按键行程": "—",
+            "按键寿命": "—",
+            "供电续航": "3000mAh,关灯约1000小时"
+          },
+          "sell": "",
+          "image": "images/nuphy-node75.png",
+          "source_url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard"
+        },
+        {
+          "brand": "AESCO",
+          "model": "A83 Air",
+          "price": 699,
+          "size": "315*132*30 mm",
+          "weight": "1030 g",
+          "specs_detail": {
+            "连接方式": "蓝牙5.0/2.4G/有线 三模",
+            "按键数": "83键",
+            "按键类型": "凯华定制全POM矮轴(薄荷轴)",
+            "按键行程": "全程2.8mm/触发1.2mm",
+            "按键寿命": "5000万次",
+            "供电续航": "3800mAh,最长630小时"
+          },
+          "sell": "",
+          "image": "images/aesco-a83-air.png",
+          "source_url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard"
+        },
+        {
+          "brand": "洛斐 Lofree",
           "model": "小順 FLOW2",
-          "price": "699",
+          "price": 699,
           "size": "316.8*138*23.5 mm(84键)",
           "weight": "550 g(84键)",
           "specs_detail": {
@@ -88,26 +106,8 @@
         },
         {
           "brand": "NuPhy",
-          "model": "Node75",
-          "price": "469",
-          "size": "—",
-          "weight": "—",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0/2.4G/有线 三模",
-            "按键数": "84键 75%配列",
-            "按键类型": "矮轴,全键热插拔(45g红/50g茶/42g粉)",
-            "按键行程": "—",
-            "按键寿命": "—",
-            "供电续航": "3000mAh,关灯约1000小时"
-          },
-          "sell": "",
-          "image": "images/nuphy-node75.png",
-          "source_url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard"
-        },
-        {
-          "brand": "NuPhy",
           "model": "Kick75",
-          "price": "799",
+          "price": 799,
           "size": "333*143.3*33.6 mm",
           "weight": "877 g(矮軸)",
           "specs_detail": {
@@ -137,47 +137,28 @@
       ],
       "items": [
         {
-          "brand": "英菲克 INPHIC",
-          "model": "X9 Pro",
-          "price": "129",
-          "size": "124*78*74 mm",
-          "weight": "95±5 g",
-          "specs_detail": {
-            "连接方式": "2.4G/蓝牙5.0/有线 三模",
-            "分辨率DPI": "800-12000 DPI 多档",
-            "传感器": "—",
-            "手感": "垂直58°/人体工学/静音",
-            "滚轮": "—",
-            "颜色": "黑色/白色",
-            "手型": "大手型"
-          },
-          "sell": "",
-          "image": "images/inphic-x9pro.jpg",
-          "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse"
-        },
-        {
-          "brand": "B.O.W 航世",
-          "model": "MD190L mini",
-          "price": "159",
-          "size": "72.28*76.42*120.24 mm",
+          "brand": "多彩 Delux",
+          "model": "M618AIR GX",
+          "price": 69,
+          "size": "115*80.7*75.2 mm",
           "weight": "—",
           "specs_detail": {
-            "连接方式": "2.4G/蓝牙 双模",
-            "分辨率DPI": "800/1200/1600/2400 DPI",
+            "连接方式": "无线2.4G(干电池版)",
+            "分辨率DPI": "最高4000 DPI",
             "传感器": "—",
-            "手感": "垂直/人体工学/静音",
-            "滚轮": "3D防滑滚轮",
-            "颜色": "—",
-            "手型": "小手型"
+            "手感": "垂直/人体工学/静音(中小手)",
+            "滚轮": "—",
+            "颜色": "黑/樱花粉/薰衣紫/极地白/松叶绿",
+            "手型": "中手型"
           },
           "sell": "",
-          "image": "images/bow-md190l-mini.jpg",
-          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml"
+          "image": "images/delux-m618air-gx.png",
+          "source_url": "https://www.deluxworld.com/"
         },
         {
           "brand": "雷柏 Rapoo",
           "model": "MV20",
-          "price": "79",
+          "price": 79,
           "size": "117*76*69 mm",
           "weight": "约90 g",
           "specs_detail": {
@@ -194,28 +175,9 @@
           "source_url": "https://www.rapoo.cn/product/589"
         },
         {
-          "brand": "羅技 Logitech",
-          "model": "Lift",
-          "price": "599",
-          "size": "70*71*108 mm",
-          "weight": "124 g",
-          "specs_detail": {
-            "连接方式": "蓝牙BLE + Logi Bolt 双模(3通道)",
-            "分辨率DPI": "400-4000 DPI",
-            "传感器": "Pluto One 光学",
-            "手感": "57°垂直/人体工学(中小手)",
-            "滚轮": "SmartWheel 智能滚轮",
-            "颜色": "石墨黑/珍珠白/玫瑰粉",
-            "手型": "中手型"
-          },
-          "sell": "",
-          "image": "images/logitech-lift.png",
-          "source_url": "https://www.logitech.com/zh-tw/products/mice/lift-vertical-ergonomic-mouse.html"
-        },
-        {
           "brand": "多彩 Delux",
           "model": "M618XU",
-          "price": "99",
+          "price": 99,
           "size": "135.5*100*87 mm",
           "weight": "约225 g",
           "specs_detail": {
@@ -234,7 +196,7 @@
         {
           "brand": "綠聯 UGREEN",
           "model": "MU008",
-          "price": "119",
+          "price": 119,
           "size": "135*83*78 mm",
           "weight": "130 g(含电池)",
           "specs_detail": {
@@ -251,23 +213,61 @@
           "source_url": "https://www.lulian.cn/product/1068.html"
         },
         {
-          "brand": "多彩 Delux",
-          "model": "M618AIR GX",
-          "price": "69",
-          "size": "115*80.7*75.2 mm",
+          "brand": "英菲克 INPHIC",
+          "model": "X9 Pro",
+          "price": 129,
+          "size": "124*78*74 mm",
+          "weight": "95±5 g",
+          "specs_detail": {
+            "连接方式": "2.4G/蓝牙5.0/有线 三模",
+            "分辨率DPI": "800-12000 DPI 多档",
+            "传感器": "—",
+            "手感": "垂直58°/人体工学/静音",
+            "滚轮": "—",
+            "颜色": "黑色/白色",
+            "手型": "大手型"
+          },
+          "sell": "",
+          "image": "images/inphic-x9pro.jpg",
+          "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse"
+        },
+        {
+          "brand": "B.O.W 航世",
+          "model": "MD190L mini",
+          "price": 159,
+          "size": "72.28*76.42*120.24 mm",
           "weight": "—",
           "specs_detail": {
-            "连接方式": "无线2.4G(干电池版)",
-            "分辨率DPI": "最高4000 DPI",
+            "连接方式": "2.4G/蓝牙 双模",
+            "分辨率DPI": "800/1200/1600/2400 DPI",
             "传感器": "—",
-            "手感": "垂直/人体工学/静音(中小手)",
-            "滚轮": "—",
-            "颜色": "黑/樱花粉/薰衣紫/极地白/松叶绿",
+            "手感": "垂直/人体工学/静音",
+            "滚轮": "3D防滑滚轮",
+            "颜色": "—",
+            "手型": "小手型"
+          },
+          "sell": "",
+          "image": "images/bow-md190l-mini.jpg",
+          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml"
+        },
+        {
+          "brand": "羅技 Logitech",
+          "model": "Lift",
+          "price": 599,
+          "size": "70*71*108 mm",
+          "weight": "124 g",
+          "specs_detail": {
+            "连接方式": "蓝牙BLE + Logi Bolt 双模(3通道)",
+            "分辨率DPI": "400-4000 DPI",
+            "传感器": "Pluto One 光学",
+            "手感": "57°垂直/人体工学(中小手)",
+            "滚轮": "SmartWheel 智能滚轮",
+            "颜色": "石墨黑/珍珠白/玫瑰粉",
             "手型": "中手型"
           },
           "sell": "",
-          "image": "images/delux-m618air-gx.png",
-          "source_url": "https://www.deluxworld.com/"
+          "image": "images/logitech-lift.png",
+          "source_url": "https://www.logitech.com/zh-tw/products/mice/lift-vertical-ergonomic-mouse.html"
         }
       ]
     }
