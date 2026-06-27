@@ -1,0 +1,12 @@
+# 本機 Claude Code 設定(含全放行權限,不該進共用 repo)
+.claude/
+
+# 爬蟲暫存/原始頁面
+scraper/raw.html
+*.raw.html
+__pycache__/
+*.pyc
+
+# 系統
+.DS_Store
+Thumbs.db

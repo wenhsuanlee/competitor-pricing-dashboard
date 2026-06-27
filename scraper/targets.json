@@ -1,0 +1,27 @@
+{
+  "_comment": "爬蟲設定(方案A:規格自動抓+價格人工)。site=rapoo 的品項由 scrape.py 自動抓『規格』(尺寸/重量/連接等),價格一律人工維護於 data.json。url 留空者會被跳過。brand+model 必須與 data.json 完全一致。Logitech 官方商城是 JS SPA,規格抓不到,列為人工(site=manual)。",
+  "mouse": {
+    "label": "辦公滑鼠",
+    "items": [
+      { "brand": "雷柏 Rapoo", "model": "MT760",      "site": "rapoo",  "url": "https://www.rapoo.cn/product/764" },
+      { "brand": "雷柏 Rapoo", "model": "MT760 mini", "site": "rapoo",  "url": "https://www.rapoo.cn/product/765" },
+      { "brand": "雷柏 Rapoo", "model": "MT550",      "site": "rapoo",  "url": "https://www.rapoo.cn/product/808" },
+      { "brand": "雷柏 Rapoo", "model": "MT560",      "site": "rapoo",  "url": "https://www.rapoo.cn/product/817" },
+      { "brand": "雷柏 Rapoo", "model": "MT750",      "site": "rapoo",  "url": "https://www.rapoo.cn/product/870" },
+      { "brand": "雷柏 Rapoo", "model": "MT760NL",    "site": "rapoo",  "url": "https://www.rapoo.cn/product/830" },
+      { "brand": "羅技 Logitech", "model": "MX Master 3S", "site": "manual", "url": "" }
+    ]
+  },
+  "kb": {
+    "label": "辦公鍵盤",
+    "items": [
+      { "brand": "雷柏 Rapoo", "model": "K2800",  "site": "rapoo",  "url": "https://www.rapoo.cn/product/93" },
+      { "brand": "雷柏 Rapoo", "model": "E1050",  "site": "rapoo",  "url": "https://www.rapoo.cn/product/564" },
+      { "brand": "雷柏 Rapoo", "model": "E9000G", "site": "rapoo",  "url": "https://www.rapoo.cn/product/787" },
+      { "brand": "雷柏 Rapoo", "model": "E9300G", "site": "rapoo",  "url": "https://www.rapoo.cn/product/788" },
+      { "brand": "雷柏 Rapoo", "model": "E900T",  "site": "rapoo",  "url": "https://www.rapoo.cn/product/846" },
+      { "brand": "雷柏 Rapoo", "model": "NK8000", "site": "rapoo",  "url": "https://www.rapoo.cn/product/754" },
+      { "brand": "羅技 Logitech", "model": "MX Keys S", "site": "manual", "url": "" }
+    ]
+  }
+}

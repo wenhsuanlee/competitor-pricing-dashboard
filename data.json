@@ -1,0 +1,171 @@
+{
+  "updated_at": "2026-06-27",
+  "currency": "CNY",
+  "draft": true,
+  "categories": {
+    "mouse": {
+      "label": "辦公滑鼠",
+      "items": [
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "MT760",
+          "price": null,
+          "size": "125*81*47mm",
+          "weight": "约101g（不带接收器&数据线）",
+          "specs": "连接方式：蓝牙5.0、无线2.4G、有线 · 手感类型：右手人体工学 · 工作方式：原相3220高性能引擎 · 产品颜色：雅醺黑、蔷薇粉、云母灰 · 滚轮方向：双向",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/764"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "MT760 mini",
+          "price": null,
+          "size": "115*74*42mm",
+          "weight": "约88g（不带接收器&数据线）",
+          "specs": "连接方式：蓝牙5.0、无线2.4G、有线 · 手感类型：右手人体工学 · 工作方式：原相3220高性能引擎 · 产品颜色：雅醺黑、蔷薇粉、云母灰 · 滚轮方向：双向",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/765"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "MT550",
+          "price": null,
+          "size": "103*69*43mm",
+          "weight": "79g（以上不带接收器&数据线）",
+          "specs": "连接方式：蓝牙5.0、无线24G和有线 · 手感类型：右手人体工学 · 工作方式：原相3220高性能引擎 · 滚轮方向：双向 · 分辨率：预设800/1000/1200/1600/2400/3200/4000DPI",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/808"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "MT560",
+          "price": null,
+          "size": "106*70*44mm",
+          "weight": "83g（不带接收器&数据线）",
+          "specs": "连接方式：蓝牙5.0、无线2.4G和有线 · 手感类型：右手人体工学 · 工作方式：原相3220高性能引擎 · 产品颜色：素黑、芽绿、胭蓝、暖茶、黛紫 · 滚轮方向：双向",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/817"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "MT750",
+          "price": null,
+          "size": "123*86*49mm",
+          "weight": "约124g（不含接收器&数据线）",
+          "specs": "连接方式：无线2.4G、蓝牙5.0和有线 · 手感类型：右手人体工学 · 工作方式：原相3220高性能引擎 · 滚轮方向：双向 · 灵敏度：预设800/1000/1200/1600/2400/3200/4000DPI",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/870"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "MT760NL",
+          "price": null,
+          "size": "约125*81*47mm",
+          "weight": "105g（不带接收器&数据线）",
+          "specs": "连接方式：星闪、蓝牙5.0和有线 · 手感类型：右手人体工学 · 工作方式：原相3311高性能引擎 · 滚轮方向：双向 · 灵敏度：预设800/1200/1600/2400/3200/6400/12000DPI",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/830"
+        },
+        {
+          "brand": "羅技 Logitech",
+          "model": "MX Master 3S",
+          "price": null,
+          "size": "124.9×84.3×51 mm",
+          "weight": "141 g",
+          "specs": "连接方式：蓝牙 + Logi Bolt 接收器双模 · 8000 DPI 任意表面追踪 · 7 个按键 · MagSpeed 电磁滚轮 · USB-C 充电（满电约 70 天）",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.logitech.com.cn/zh-cn/shop/p/mx-master-3s.html"
+        }
+      ]
+    },
+    "kb": {
+      "label": "辦公鍵盤",
+      "items": [
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "K2800",
+          "price": null,
+          "size": "376*146*23mm",
+          "weight": "434g",
+          "specs": "按键数：78 · 传输方式：无线2.4G · 按键行程：1.5mm · 按键寿命：500万次 · 工作电压：1.5V",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/93"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "E1050",
+          "price": null,
+          "size": "392*125.6*28.9mm",
+          "weight": "约391g",
+          "specs": "按键数：104 · 传输方式：无线2.4G · 工作电压：1.5V · 供电模式：1节AA电池 · 续航时长：12个月",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/564"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "E9000G",
+          "price": null,
+          "size": "284*119*20mm",
+          "weight": "约240g（不含接收器与电池）",
+          "specs": "连接方式：蓝牙5.0、4.0和无线2.4G · 按键数：78键 · 按键行程：1.5mm · 按键寿命：500万次 · 供电模式：2节AAA电池",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/787"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "E9300G",
+          "price": null,
+          "size": "363*119*20mm",
+          "weight": "约310g（不含接收器与电池）",
+          "specs": "连接方式：蓝牙5.0、4.0和无线2.4G · 按键数：99键 · 按键行程：1.5mm · 按键寿命：500万次 · 供电模式：2节AAA电池",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/788"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "E900T",
+          "price": null,
+          "size": "282*104*20mm",
+          "weight": "约218g（不含接收器&电池）",
+          "specs": "连接方式：蓝牙5.0、4.0和无线2.4G · 按键数：73键 · 按键行程：1.5±0.2mm · 按键寿命：500万次 · 供电方式：2节AAA电池",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/846"
+        },
+        {
+          "brand": "雷柏 Rapoo",
+          "model": "NK8000",
+          "price": null,
+          "size": "295.2*136.8*23.4mm",
+          "weight": "约354g",
+          "specs": "按键数：80键 · 传输方式：有线 · 按键寿命：1000万次 · 按键类型：薄膜 · 接口：USB",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.rapoo.cn/product/754"
+        },
+        {
+          "brand": "羅技 Logitech",
+          "model": "MX Keys S",
+          "price": null,
+          "size": "430.2×131.63×20.5 mm",
+          "weight": "810 g",
+          "specs": "连接方式：蓝牙 + Logi Bolt 接收器双模（可连 3 台）· 智能背光（自动感应/调节）· 球面凹型键帽 · USB-C 充电（满电约 10 天 / 关背光 5 个月）",
+          "sell": "",
+          "image": "",
+          "source_url": "https://www.logitech.com.cn/zh-cn/shop/p/mx-keys-s.html"
+        }
+      ]
+    }
+  }
+}
