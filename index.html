@@ -123,6 +123,7 @@
       <button data-view="cards" class="active">卡片</button>
       <button data-view="table">對照表</button>
       <button data-view="chart">價格圖</button>
+      <button data-view="scatter">散點圖</button>
     </div>
   </div>
 
@@ -261,6 +262,7 @@ function render(){
   const fields=cat.spec_fields||[];
   if(curView==='cards') c.innerHTML=viewCards(items, DATA.currency, fields);
   else if(curView==='table') c.innerHTML=viewTable(items, DATA.currency, fields);
+  else if(curView==='scatter') c.innerHTML=viewScatter(items, DATA.currency, curCat);
   else c.innerHTML=viewChart(items, DATA.currency);
 }
 
@@ -332,6 +334,107 @@ function viewChart(items, cur){
     </div>`;
   }).join('');
   return `<div class="chart">${rows}</div>`;
+}
+
+function viewScatter(items, cur, catKey){
+  function parseDPImax(s){
+    const n=(String(s).match(/\d+/g)||[]).map(Number);
+    return n.length?Math.max(...n):null;
+  }
+  function parseBattery(s){
+    const m=String(s).match(/(\d{3,5})\s*mAh/i);
+    return m?parseInt(m[1]):null;
+  }
+  const pal=['#3b82f6','#22c55e','#f59e0b','#ef4444','#a855f7','#06b6d4','#ec4899'];
+  const brandClr={};
+  [...new Set(items.map(i=>i.brand))].forEach((b,i)=>brandClr[b]=pal[i%pal.length]);
+
+  const HAND_CLR={'小手型':'#f59e0b','中手型':'#3b82f6','大手型':'#22c55e'};
+  const isMouse=catKey==='mouse';
+  const xLabel=isMouse?'最大 DPI':'電池容量 (mAh)';
+  const xGetter=isMouse
+    ?i=>parseDPImax((i.specs_detail||{})['分辨率DPI'])
+    :i=>parseBattery((i.specs_detail||{})['供电续航']);
+  const xFmt=isMouse?(v=>v>=1000?(v/1000)+'k':String(v)):(v=>v+'');
+  const ptClr=isMouse
+    ?(p=>HAND_CLR[(p.specs_detail||{})['手型']]||'#94a3b8')
+    :(p=>brandClr[p.brand]||'#94a3b8');
+
+  const allPts=items.map(i=>({x:xGetter(i),y:(i.price!==null&&i.price!==''&&i.price!==0)?Number(i.price):null,model:i.model,brand:i.brand,specs_detail:i.specs_detail||{}}));
+  const skipped=allPts.filter(p=>p.x===null||p.y===null).map(p=>p.model);
+  let pts=allPts.filter(p=>p.x!==null&&p.y!==null);
+  if(pts.length<2) return `<div class="chart"><div class="empty">散點圖資料不足(需至少 2 項有完整資料)。<br>缺少: ${skipped.join('、')}</div></div>`;
+
+  // Jitter 同 X 值的點,避免重疊
+  const xGrp={};
+  pts.forEach(p=>{xGrp[p.x]=(xGrp[p.x]||[]);xGrp[p.x].push(p);});
+  const xs=pts.map(p=>p.x), ys=pts.map(p=>p.y);
+  const xSpan=Math.max(...xs)-Math.min(...xs)||1;
+  Object.values(xGrp).forEach(grp=>{
+    if(grp.length<2) return;
+    const step=xSpan*0.06;
+    grp.forEach((p,i)=>p.xj=p.x+(i-(grp.length-1)/2)*step);
+  });
+  pts.forEach(p=>{ if(p.xj===undefined) p.xj=p.x; });
+
+  const W=680,H=400,ML=68,MR=20,MT=24,MB=72;
+  const pw=W-ML-MR, ph=H-MT-MB;
+  const xVals=pts.map(p=>p.xj);
+  const xSpanJ=Math.max(...xVals)-Math.min(...xVals)||1;
+  const ySpan=Math.max(...ys)-Math.min(...ys)||1;
+  const xMin2=Math.min(...xVals)-xSpanJ*0.16, xMax2=Math.max(...xVals)+xSpanJ*0.16;
+  const yMin2=Math.min(...ys)-ySpan*0.22, yMax2=Math.max(...ys)+ySpan*0.22;
+  const sx=x=>ML+(x-xMin2)/(xMax2-xMin2)*pw;
+  const sy=y=>MT+ph-(y-yMin2)/(yMax2-yMin2)*ph;
+
+  function niceTicks(lo,hi,max=6){
+    const sp=hi-lo, st=Math.pow(10,Math.floor(Math.log10(sp)));
+    const nice=[1,2,5].map(m=>m*st).find(s=>sp/s<=max)||st*10;
+    const t=[];
+    for(let v=Math.ceil(lo/nice)*nice;v<=hi+nice*0.01;v+=nice) t.push(Math.round(v*1000)/1000);
+    return t;
+  }
+  const yTicks=niceTicks(yMin2,yMax2);
+  const xTicks=niceTicks(xMin2,xMax2);
+  const vxMin=Math.min(...xs), vxMax=Math.max(...xs);
+
+  const grid=yTicks.map(t=>`<line x1="${ML}" y1="${sy(t).toFixed(1)}" x2="${ML+pw}" y2="${sy(t).toFixed(1)}" stroke="#1e242d" stroke-width="1.5"/>`).join('');
+  const yLbl=yTicks.map(t=>`<text x="${ML-7}" y="${(sy(t)+4).toFixed(1)}" text-anchor="end" fill="#64748b" font-size="11">${t>=1000?t.toLocaleString():t}</text>`).join('');
+  const xLbl=xTicks.filter(t=>t>=vxMin-xSpan*0.05&&t<=vxMax+xSpan*0.05)
+    .map(t=>`<text x="${sx(t).toFixed(1)}" y="${(MT+ph+16).toFixed(1)}" text-anchor="middle" fill="#64748b" font-size="11">${xFmt(t)}</text>`).join('');
+
+  // 點與標籤
+  const circles=pts.map((p,idx)=>{
+    const cx=sx(p.xj), cy=sy(p.y), clr=ptClr(p);
+    const grpLen=(xGrp[p.x]||[]).length;
+    const lbl=p.model.length>12?p.model.slice(0,11)+'…':p.model;
+    // 同 cluster 的標籤交替上下
+    const grpIdx=(xGrp[p.x]||[]).indexOf(p);
+    const lblAbove=(cy>MT+ph*0.55)||(grpLen>1&&grpIdx%2===1);
+    const ly=lblAbove?cy-13:cy+18;
+    const tip=`${p.brand} ${p.model}&#10;${xLabel}: ${xFmt(p.x)}&#10;價格: ${cur} ${p.y.toLocaleString()}`;
+    return `<g><circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="8" fill="${clr}" fill-opacity="0.85" stroke="#fff" stroke-width="1.5" stroke-opacity="0.5"/><text x="${cx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" fill="#e2e8f0" font-size="11.5" font-weight="600">${lbl}</text><title>${tip}</title></g>`;
+  }).join('');
+
+  // 圖例
+  let legendItems=isMouse
+    ?Object.entries(HAND_CLR).filter(([k])=>pts.some(p=>(p.specs_detail['手型']||'')=== k))
+    :[...new Set(pts.map(p=>p.brand))].map(b=>[b,brandClr[b]]);
+  const legSvg=legendItems.map(([lbl,clr],i)=>`<g transform="translate(${ML+i*145},${MT+ph+46})"><circle r="5" fill="${clr}"/><text x="10" y="4" fill="#94a3b8" font-size="11.5">${lbl}</text></g>`).join('');
+  const note=skipped.length?`<div style="color:#64748b;font-size:11.5px;text-align:center;margin-top:4px">＊ ${skipped.join('、')} 缺 ${xLabel} 資料,未列入</div>`:'';
+
+  return `<div class="chart" style="padding:12px 0 4px;overflow:hidden">
+    <svg viewBox="0 0 ${W} ${H}" style="width:100%;display:block;font-family:inherit">
+      <rect x="${ML}" y="${MT}" width="${pw}" height="${ph}" fill="#171c23" rx="4"/>
+      ${grid}
+      <line x1="${ML}" y1="${MT}" x2="${ML}" y2="${MT+ph}" stroke="#2a323d" stroke-width="1.5"/>
+      <line x1="${ML}" y1="${MT+ph}" x2="${ML+pw}" y2="${MT+ph}" stroke="#2a323d" stroke-width="1.5"/>
+      ${yLbl}${xLbl}
+      <text transform="rotate(-90)" x="${-(MT+ph/2)}" y="16" text-anchor="middle" fill="#64748b" font-size="12">價格 (${cur})</text>
+      <text x="${ML+pw/2}" y="${(MT+ph+33).toFixed(1)}" text-anchor="middle" fill="#64748b" font-size="12">${xLabel}</text>
+      ${circles}${legSvg}
+    </svg>${note}
+  </div>`;
 }
 
 boot();
