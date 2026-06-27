@@ -65,11 +65,17 @@
   .card a.src{font-size:12px;color:var(--accent);text-decoration:none;margin-top:auto}
   /* table */
   .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
-  table{border-collapse:collapse;width:100%;font-size:13px;min-width:640px}
-  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
-  th{background:var(--panel2);color:var(--muted);font-weight:600;position:sticky;top:0}
-  td.specs-cell{white-space:normal;min-width:240px;color:#cbd5e1}
-  tr:last-child td{border-bottom:0}
+  table{border-collapse:collapse;width:100%;font-size:13px}
+  th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  thead th{background:var(--panel2);color:var(--muted);font-weight:600;position:sticky;top:0;z-index:1;text-align:center}
+  .col-brand{display:block;font-size:11px;font-weight:400;color:var(--muted)}
+  .col-model{display:block;font-weight:700;color:var(--txt)}
+  .col-price{display:block;font-size:12px;margin-top:2px}
+  .row-label{background:var(--panel2);color:var(--muted);font-weight:600;
+    position:sticky;left:0;z-index:1;border-right:1px solid var(--line);min-width:90px}
+  .spec-corner{position:sticky;left:0;top:0;z-index:2;background:var(--panel2);border-right:1px solid var(--line)}
+  tbody tr:last-child td,tbody tr:last-child th{border-bottom:0}
+  tbody td{text-align:center;color:#cbd5e1}
   .num{text-align:right;font-variant-numeric:tabular-nums}
   .pill{color:var(--accent2);font-weight:700}
   .pill.none{color:var(--muted);font-weight:500}
@@ -284,23 +290,28 @@ function viewCards(items, cur, fields){
 
 function viewTable(items, cur, fields){
   fields=fields||[];
-  const head='<th>品牌</th><th>型號</th><th class="num">價格</th><th>尺寸</th><th>重量</th>'
-    + fields.map(f=>`<th>${f}</th>`).join('');
-  const rows=items.map(i=>{
-    const sd=i.specs_detail||{};
-    const sc=fields.map(f=>`<td>${sd[f]||'—'}</td>`).join('');
-    return `<tr>
-      <td>${i.brand||''}</td>
-      <td><b>${i.model||''}</b></td>
-      <td class="num">${(i.price===null||i.price===''||i.price===0)
-        ?'<span class="pill none">待填</span>'
-        :`<span class="pill">${cur} ${Number(i.price).toLocaleString()}</span>`}</td>
-      <td>${i.size||'—'}</td>
-      <td>${i.weight||'—'}</td>
-      ${sc}
-    </tr>`;}).join('');
+  // 欄標頭：每個品項一欄
+  const colHeaders=items.map(i=>{
+    const hasPrice=!(i.price===null||i.price===''||i.price===0);
+    const priceHtml=hasPrice
+      ?`<span class="pill col-price">${cur} ${Number(i.price).toLocaleString()}</span>`
+      :`<span class="pill none col-price">待填</span>`;
+    return `<th><span class="col-brand">${i.brand||''}</span><span class="col-model">${i.model||''}</span>${priceHtml}</th>`;
+  }).join('');
+  // 列定義：[列名, 取值函式]
+  const rowDefs=[
+    ['尺寸',   i=>i.size||'—'],
+    ['重量',   i=>i.weight||'—'],
+    ...fields.map(f=>[f, i=>(i.specs_detail||{})[f]||'—'])
+  ];
+  const bodyRows=rowDefs.map(([label,getter])=>{
+    const cells=items.map(i=>`<td>${getter(i)}</td>`).join('');
+    return `<tr><th class="row-label">${label}</th>${cells}</tr>`;
+  }).join('');
   return `<div class="tablewrap"><table>
-    <thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
+    <thead><tr><th class="spec-corner"></th>${colHeaders}</tr></thead>
+    <tbody>${bodyRows}</tbody>
+  </table></div>`;
 }
 
 function viewChart(items, cur){
