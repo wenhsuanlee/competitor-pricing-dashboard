@@ -232,6 +232,9 @@ def main() -> int:
                 "sell": prev.get("sell", ""),
                 "image": prev.get("image", ""),
                 "source_url": url or prev.get("source_url", ""),
+                "rating": prev.get("rating"),
+                "reviews": prev.get("reviews"),
+                "launched": prev.get("launched"),
             }
 
             name = f"{brand} {model}"

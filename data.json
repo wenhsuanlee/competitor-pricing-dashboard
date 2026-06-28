@@ -30,7 +30,10 @@
           },
           "sell": "",
           "image": "images/kzzi-i75-youth.jpg",
-          "source_url": "https://diy.zol.com.cn/1009/10093646.html"
+          "source_url": "https://diy.zol.com.cn/1009/10093646.html",
+          "rating": null,
+          "reviews": null,
+          "launched": "2025"
         },
         {
           "brand": "洛斐 Lofree",
@@ -48,7 +51,10 @@
           },
           "sell": "",
           "image": "images/lofree-flow-lite84.jpg",
-          "source_url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard"
+          "source_url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2024"
         },
         {
           "brand": "NuPhy",
@@ -66,7 +72,10 @@
           },
           "sell": "",
           "image": "images/nuphy-node75.png",
-          "source_url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard"
+          "source_url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2025"
         },
         {
           "brand": "AESCO",
@@ -84,7 +93,10 @@
           },
           "sell": "",
           "image": "images/aesco-a83-air.png",
-          "source_url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard"
+          "source_url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2026"
         },
         {
           "brand": "洛斐 Lofree",
@@ -102,7 +114,10 @@
           },
           "sell": "",
           "image": "images/lofree-flow2.png",
-          "source_url": "https://www.lofree.co/products/flow-2-100-low-profile-mechanical-keyboard"
+          "source_url": "https://www.lofree.co/products/flow-2-100-low-profile-mechanical-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2025"
         },
         {
           "brand": "NuPhy",
@@ -120,7 +135,10 @@
           },
           "sell": "",
           "image": "images/nuphy-kick75.jpg",
-          "source_url": "https://nuphy.com.tw/products/nuphy-kick75-hybrid-profile-custom-wireless-mechanical-keyboard"
+          "source_url": "https://nuphy.com.tw/products/nuphy-kick75-hybrid-profile-custom-wireless-mechanical-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2025"
         }
       ]
     },
@@ -153,7 +171,10 @@
           },
           "sell": "",
           "image": "images/delux-m618air-gx.png",
-          "source_url": "https://www.deluxworld.com/"
+          "source_url": "https://www.deluxworld.com/",
+          "rating": null,
+          "reviews": null,
+          "launched": "2025"
         },
         {
           "brand": "雷柏 Rapoo",
@@ -172,7 +193,10 @@
           },
           "sell": "",
           "image": "images/rapoo-mv20.png",
-          "source_url": "https://www.rapoo.cn/product/589"
+          "source_url": "https://www.rapoo.cn/product/589",
+          "rating": null,
+          "reviews": null,
+          "launched": "2021"
         },
         {
           "brand": "多彩 Delux",
@@ -191,7 +215,10 @@
           },
           "sell": "",
           "image": "images/delux-m618xu.jpg",
-          "source_url": "https://www.deluxworld.com/pro-detail-M618X.html"
+          "source_url": "https://www.deluxworld.com/pro-detail-M618X.html",
+          "rating": null,
+          "reviews": null,
+          "launched": "2020"
         },
         {
           "brand": "綠聯 UGREEN",
@@ -210,7 +237,10 @@
           },
           "sell": "",
           "image": "images/ugreen-mu008.jpg",
-          "source_url": "https://www.lulian.cn/product/1068.html"
+          "source_url": "https://www.lulian.cn/product/1068.html",
+          "rating": null,
+          "reviews": null,
+          "launched": "2022"
         },
         {
           "brand": "英菲克 INPHIC",
@@ -229,7 +259,10 @@
           },
           "sell": "",
           "image": "images/inphic-x9pro.jpg",
-          "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse"
+          "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse",
+          "rating": null,
+          "reviews": null,
+          "launched": null
         },
         {
           "brand": "B.O.W 航世",
@@ -248,7 +281,10 @@
           },
           "sell": "",
           "image": "images/bow-md190l-mini.jpg",
-          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml"
+          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
+          "rating": null,
+          "reviews": null,
+          "launched": "2022"
         },
         {
           "brand": "羅技 Logitech",
@@ -267,7 +303,10 @@
           },
           "sell": "",
           "image": "images/logitech-lift.png",
-          "source_url": "https://www.logitech.com/zh-tw/products/mice/lift-vertical-ergonomic-mouse.html"
+          "source_url": "https://www.logitech.com/zh-tw/products/mice/lift-vertical-ergonomic-mouse.html",
+          "rating": null,
+          "reviews": null,
+          "launched": "2022"
         }
       ]
     }

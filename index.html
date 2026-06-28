@@ -62,6 +62,10 @@
   .specs .sk{color:var(--muted);flex:0 0 68px}
   .specs .sv{color:#cbd5e1;flex:1}
   .sell{font-size:12.5px;color:#fcd34d}
+  .card-badges{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .badge-year{font-size:11px;padding:2px 8px;background:var(--panel2);border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+  .badge-rating{font-size:12.5px;color:#f59e0b;font-weight:700}
+  .badge-reviews{font-size:11.5px;color:var(--muted)}
   .card a.src{font-size:12px;color:var(--accent);text-decoration:none;margin-top:auto}
   /* table */
   .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
@@ -266,6 +270,11 @@ function render(){
   else c.innerHTML=viewChart(items, DATA.currency);
 }
 
+function fmtReviews(n){
+  if(!n) return '—';
+  return n>=10000?(n/10000).toFixed(1)+'萬':n.toLocaleString();
+}
+
 function specLines(sd, fields){
   const keys=(fields&&fields.length)?fields:Object.keys(sd||{});
   return keys.filter(f=>sd&&sd[f]&&sd[f]!=='—')
@@ -283,6 +292,10 @@ function viewCards(items, cur, fields){
         <div class="model">${i.model||''}</div>
       </div>
       ${fmtPrice(i.price, cur)}
+      <div class="card-badges">
+        ${i.launched?`<span class="badge-year">${i.launched}</span>`:''}
+        ${i.rating?`<span class="badge-rating">★ ${i.rating}</span><span class="badge-reviews">${fmtReviews(i.reviews)}則評</span>`:''}
+      </div>
       <div class="meta"><b>尺寸</b> ${i.size||'—'} &nbsp;·&nbsp; <b>重量</b> ${i.weight||'—'}</div>
       ${detail?`<div class="specs">${detail}</div>`:''}
       ${i.sell?`<div class="sell">${i.sell}</div>`:''}
@@ -302,6 +315,9 @@ function viewTable(items, cur, fields){
   }).join('');
   // 列定義：[列名, 取值函式]
   const rowDefs=[
+    ['上市年份', i=>i.launched||'—'],
+    ['京東評分', i=>i.rating?`★ ${i.rating}`:'—'],
+    ['評論數',  i=>fmtReviews(i.reviews)],
     ['尺寸',   i=>i.size||'—'],
     ['重量',   i=>i.weight||'—'],
     ...fields.map(f=>[f, i=>(i.specs_detail||{})[f]||'—'])
