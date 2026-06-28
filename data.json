@@ -15,27 +15,6 @@
       ],
       "items": [
         {
-          "brand": "珂芝 KZZI",
-          "model": "i75青春版",
-          "price": 299,
-          "size": "327.5*150.7*30.3 mm",
-          "weight": "710 g",
-          "specs_detail": {
-            "连接方式": "蓝牙/2.4G/有线 三模",
-            "按键数": "87键(75%配列)",
-            "按键类型": "矮轴(白雪轴),全键热插拔",
-            "按键行程": "—",
-            "按键寿命": "—",
-            "供电续航": "—"
-          },
-          "sell": "",
-          "image": "images/kzzi-i75-youth.jpg",
-          "source_url": "https://diy.zol.com.cn/1009/10093646.html",
-          "rating": null,
-          "reviews": null,
-          "launched": "2025"
-        },
-        {
           "brand": "洛斐 Lofree",
           "model": "小順青春版",
           "price": 399,
@@ -55,27 +34,6 @@
           "rating": null,
           "reviews": null,
           "launched": "2024"
-        },
-        {
-          "brand": "NuPhy",
-          "model": "Node75",
-          "price": 469,
-          "size": "317.1*137*1*22.4 mm",
-          "weight": "659 g",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0/2.4G/有线 三模",
-            "按键数": "84键 75%配列",
-            "按键类型": "矮轴,全键热插拔(45g红/50g茶/42g粉)",
-            "按键行程": "—",
-            "按键寿命": "—",
-            "供电续航": "3000mAh,关灯约1000小时"
-          },
-          "sell": "",
-          "image": "images/nuphy-node75.png",
-          "source_url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard",
-          "rating": null,
-          "reviews": null,
-          "launched": "2025"
         },
         {
           "brand": "AESCO",
@@ -99,6 +57,27 @@
           "launched": "2026"
         },
         {
+          "brand": "珂芝 KZZI",
+          "model": "i75青春版",
+          "price": 299,
+          "size": "327.5*150.7*30.3 mm",
+          "weight": "710 g",
+          "specs_detail": {
+            "连接方式": "蓝牙/2.4G/有线 三模",
+            "按键数": "87键(75%配列)",
+            "按键类型": "矮轴(白雪轴),全键热插拔",
+            "按键行程": "—",
+            "按键寿命": "—",
+            "供电续航": "—"
+          },
+          "sell": "",
+          "image": "images/kzzi-i75-youth.jpg",
+          "source_url": "https://diy.zol.com.cn/1009/10093646.html",
+          "rating": null,
+          "reviews": null,
+          "launched": "2025"
+        },
+        {
           "brand": "洛斐 Lofree",
           "model": "小順 FLOW2",
           "price": 699,
@@ -115,6 +94,27 @@
           "sell": "",
           "image": "images/lofree-flow2.png",
           "source_url": "https://www.lofree.co/products/flow-2-100-low-profile-mechanical-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2025"
+        },
+        {
+          "brand": "NuPhy",
+          "model": "Node75",
+          "price": 469,
+          "size": "317.1*137*1*22.4 mm",
+          "weight": "659 g",
+          "specs_detail": {
+            "连接方式": "蓝牙5.0/2.4G/有线 三模",
+            "按键数": "84键 75%配列",
+            "按键类型": "矮轴,全键热插拔(45g红/50g茶/42g粉)",
+            "按键行程": "—",
+            "按键寿命": "—",
+            "供电续航": "3000mAh,关灯约1000小时"
+          },
+          "sell": "",
+          "image": "images/nuphy-node75.png",
+          "source_url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard",
           "rating": null,
           "reviews": null,
           "launched": "2025"
@@ -155,26 +155,48 @@
       ],
       "items": [
         {
-          "brand": "多彩 Delux",
-          "model": "M618AIR GX",
-          "price": 69,
-          "size": "115*80.7*75.2 mm",
-          "weight": "—",
+          "brand": "英菲克 INPHIC",
+          "model": "X9 Pro",
+          "price": 129,
+          "size": "124*78*74 mm",
+          "weight": "95±5 g",
           "specs_detail": {
-            "连接方式": "无线2.4G(干电池版)",
-            "分辨率DPI": "最高4000 DPI",
+            "连接方式": "2.4G/蓝牙5.0/有线 三模",
+            "分辨率DPI": "800-12000 DPI 多档",
             "传感器": "—",
-            "手感": "垂直/人体工学/静音(中小手)",
+            "手感": "垂直58°/人体工学/静音",
             "滚轮": "—",
-            "颜色": "黑/樱花粉/薰衣紫/极地白/松叶绿",
-            "手型": "中手型"
+            "颜色": "黑色/白色",
+            "手型": "大手型"
           },
           "sell": "",
-          "image": "images/delux-m618air-gx.png",
-          "source_url": "https://www.deluxworld.com/",
+          "image": "images/inphic-x9pro.jpg",
+          "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse",
           "rating": null,
           "reviews": null,
-          "launched": "2025"
+          "launched": null
+        },
+        {
+          "brand": "B.O.W 航世",
+          "model": "MD190L mini",
+          "price": 159,
+          "size": "72.28*76.42*120.24 mm",
+          "weight": "—",
+          "specs_detail": {
+            "连接方式": "2.4G/蓝牙 双模",
+            "分辨率DPI": "800/1200/1600/2400 DPI",
+            "传感器": "—",
+            "手感": "垂直/人体工学/静音",
+            "滚轮": "3D防滑滚轮",
+            "颜色": "—",
+            "手型": "小手型"
+          },
+          "sell": "",
+          "image": "images/bow-md190l-mini.jpg",
+          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
+          "rating": null,
+          "reviews": null,
+          "launched": "2022"
         },
         {
           "brand": "雷柏 Rapoo",
@@ -197,6 +219,28 @@
           "rating": null,
           "reviews": null,
           "launched": "2021"
+        },
+        {
+          "brand": "羅技 Logitech",
+          "model": "Lift",
+          "price": 599,
+          "size": "70*71*108 mm",
+          "weight": "124 g",
+          "specs_detail": {
+            "连接方式": "蓝牙BLE + Logi Bolt 双模(3通道)",
+            "分辨率DPI": "400-4000 DPI",
+            "传感器": "Pluto One 光学",
+            "手感": "57°垂直/人体工学(中小手)",
+            "滚轮": "SmartWheel 智能滚轮",
+            "颜色": "石墨黑/珍珠白/玫瑰粉",
+            "手型": "中手型"
+          },
+          "sell": "",
+          "image": "images/logitech-lift.png",
+          "source_url": "https://www.logitech.com/zh-tw/products/mice/lift-vertical-ergonomic-mouse.html",
+          "rating": null,
+          "reviews": null,
+          "launched": "2022"
         },
         {
           "brand": "多彩 Delux",
@@ -243,70 +287,26 @@
           "launched": "2022"
         },
         {
-          "brand": "英菲克 INPHIC",
-          "model": "X9 Pro",
-          "price": 129,
-          "size": "124*78*74 mm",
-          "weight": "95±5 g",
-          "specs_detail": {
-            "连接方式": "2.4G/蓝牙5.0/有线 三模",
-            "分辨率DPI": "800-12000 DPI 多档",
-            "传感器": "—",
-            "手感": "垂直58°/人体工学/静音",
-            "滚轮": "—",
-            "颜色": "黑色/白色",
-            "手型": "大手型"
-          },
-          "sell": "",
-          "image": "images/inphic-x9pro.jpg",
-          "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse",
-          "rating": null,
-          "reviews": null,
-          "launched": null
-        },
-        {
-          "brand": "B.O.W 航世",
-          "model": "MD190L mini",
-          "price": 159,
-          "size": "72.28*76.42*120.24 mm",
+          "brand": "多彩 Delux",
+          "model": "M618AIR GX",
+          "price": 69,
+          "size": "115*80.7*75.2 mm",
           "weight": "—",
           "specs_detail": {
-            "连接方式": "2.4G/蓝牙 双模",
-            "分辨率DPI": "800/1200/1600/2400 DPI",
+            "连接方式": "无线2.4G(干电池版)",
+            "分辨率DPI": "最高4000 DPI",
             "传感器": "—",
-            "手感": "垂直/人体工学/静音",
-            "滚轮": "3D防滑滚轮",
-            "颜色": "—",
-            "手型": "小手型"
-          },
-          "sell": "",
-          "image": "images/bow-md190l-mini.jpg",
-          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
-          "rating": null,
-          "reviews": null,
-          "launched": "2022"
-        },
-        {
-          "brand": "羅技 Logitech",
-          "model": "Lift",
-          "price": 599,
-          "size": "70*71*108 mm",
-          "weight": "124 g",
-          "specs_detail": {
-            "连接方式": "蓝牙BLE + Logi Bolt 双模(3通道)",
-            "分辨率DPI": "400-4000 DPI",
-            "传感器": "Pluto One 光学",
-            "手感": "57°垂直/人体工学(中小手)",
-            "滚轮": "SmartWheel 智能滚轮",
-            "颜色": "石墨黑/珍珠白/玫瑰粉",
+            "手感": "垂直/人体工学/静音(中小手)",
+            "滚轮": "—",
+            "颜色": "黑/樱花粉/薰衣紫/极地白/松叶绿",
             "手型": "中手型"
           },
           "sell": "",
-          "image": "images/logitech-lift.png",
-          "source_url": "https://www.logitech.com/zh-tw/products/mice/lift-vertical-ergonomic-mouse.html",
+          "image": "images/delux-m618air-gx.png",
+          "source_url": "https://www.deluxworld.com/",
           "rating": null,
           "reviews": null,
-          "launched": "2022"
+          "launched": "2025"
         }
       ]
     }
