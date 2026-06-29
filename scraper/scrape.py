@@ -175,6 +175,48 @@ def extract_rapoo(html: str) -> dict:
 EXTRACTORS = {"rapoo": extract_rapoo}
 
 
+# ---------- Shopify JSON API ----------
+def fetch_raw(url: str) -> str | None:
+    """不限回應大小的抓取（Shopify JSON 可能很小）。"""
+    for attempt in range(1, RETRIES + 1):
+        try:
+            r = requests.get(url, headers=HEADERS, timeout=TIMEOUT, allow_redirects=True)
+            if r.status_code == 200:
+                r.encoding = r.apparent_encoding or "utf-8"
+                return r.text
+            print(f"      try{attempt}: HTTP {r.status_code}")
+        except Exception as e:
+            print(f"      try{attempt}: {type(e).__name__}: {e}")
+        time.sleep(2)
+    return None
+
+
+def fetch_shopify(url: str) -> dict | None:
+    """
+    Shopify 商店產品頁 URL + .json → 取 image（永遠更新）。
+    price 僅在呼叫端 update_price=True 時才使用。
+    """
+    json_url = url.split("?")[0].rstrip("/") + ".json"
+    raw = fetch_raw(json_url)
+    if not raw:
+        return None
+    try:
+        data = json.loads(raw)
+        product = data.get("product", {})
+        if not product:
+            print(f"      ✗ 回應非 Shopify 產品格式（可能被 Cloudflare 擋）")
+            return None
+        variants  = product.get("variants", [])
+        images    = product.get("images", [])
+        price_raw = variants[0].get("price", "") if variants else ""
+        price     = norm_price(price_raw)
+        image_src = images[0].get("src", "").split("?")[0] if images else ""
+        return {"price": price, "image": image_src}
+    except Exception as e:
+        print(f"      ✗ Shopify JSON 解析失敗: {e}")
+        return None
+
+
 # ---------- 主流程 ----------
 def load_json(path: Path, default):
     if path.exists():
@@ -238,7 +280,26 @@ def main() -> int:
             }
 
             name = f"{brand} {model}"
-            if site in EXTRACTORS and url:
+            if site == "shopify" and url:
+                if not robots_allows(url):
+                    print(f"  ⛔ {name}: robots.txt 不允許,跳過(保留舊值)")
+                    scrape_fail += 1
+                else:
+                    do_price = it.get("update_price", False)
+                    print(f"  ⟳ {name}: Shopify JSON (price={'自動' if do_price else '人工'})")
+                    result = fetch_shopify(url)
+                    if result:
+                        if do_price and result.get("price"):
+                            row["price"] = result["price"]
+                        if result.get("image"):
+                            row["image"] = result["image"]
+                        scraped_ok += 1
+                        print(f"      ✓ price={row['price']}  image={'已更新' if result.get('image') else '無'}")
+                    else:
+                        scrape_fail += 1
+                        print(f"      ✗ 抓取失敗,保留舊值")
+                    time.sleep(POLITE_DELAY)
+            elif site in EXTRACTORS and url:
                 if not robots_allows(url):
                     print(f"  ⛔ {name}: robots.txt 不允許,跳過抓取(保留舊值)")
                     scrape_fail += 1
@@ -248,7 +309,6 @@ def main() -> int:
                     if html:
                         try:
                             spec = EXTRACTORS[site](html)
-                            # 合理性檢查:至少要有尺寸或重量,否則視為解析失敗→降級
                             if spec.get("size") or spec.get("weight"):
                                 if spec.get("size"):
                                     row["size"] = spec["size"]

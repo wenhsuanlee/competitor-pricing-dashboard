@@ -1,20 +1,8 @@
 {
-  "_comment": "方案A策展:矮軸鍵盤+垂直滑鼠。site=manual 為人工策展(規格/圖人工維護);價格一律人工填。可後續對 Shopify/官網品牌加自動抓。",
+  "_comment": "site=shopify → Shopify .json API（更新圖片；若 update_price=true 才更新價格）；site=manual → 人工維護",
   "kb": {
     "label": "矮軸鍵盤",
     "items": [
-      {
-        "brand": "洛斐 Lofree",
-        "model": "小順青春版",
-        "site": "manual",
-        "url": ""
-      },
-      {
-        "brand": "AESCO",
-        "model": "A83 Air",
-        "site": "manual",
-        "url": ""
-      },
       {
         "brand": "珂芝 KZZI",
         "model": "i75青春版",
@@ -22,8 +10,22 @@
         "url": ""
       },
       {
+        "brand": "Keychron",
+        "model": "J9 Ultra",
+        "site": "manual",
+        "url": ""
+      },
+      {
         "brand": "洛斐 Lofree",
-        "model": "小順 FLOW2",
+        "model": "小順青春版",
+        "site": "shopify",
+        "url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard",
+        "update_price": false,
+        "_note": "國際官網 USD 定價，price 人工維護 CNY"
+      },
+      {
+        "brand": "AKKO",
+        "model": "Air 01",
         "site": "manual",
         "url": ""
       },
@@ -31,13 +33,45 @@
         "brand": "NuPhy",
         "model": "Node75",
         "site": "manual",
-        "url": ""
+        "url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard",
+        "_note": "Cloudflare 擋 .json API，暫時 manual"
+      },
+      {
+        "brand": "AESCO",
+        "model": "A83 Air",
+        "site": "manual",
+        "url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard",
+        "_note": ".json 404，暫時 manual"
+      },
+      {
+        "brand": "洛斐 Lofree",
+        "model": "小順 FLOW2",
+        "site": "shopify",
+        "url": "https://www.lofree.co/products/flow-2-100-low-profile-mechanical-keyboard",
+        "update_price": false,
+        "_note": "國際官網 USD 定價，price 人工維護 CNY"
+      },
+      {
+        "brand": "NuPhy",
+        "model": "Air96 V2",
+        "site": "manual",
+        "url": "https://nuphy.com/products/air96-v2",
+        "_note": "Cloudflare 擋 .json API，暫時 manual"
       },
       {
         "brand": "NuPhy",
         "model": "Kick75",
         "site": "manual",
-        "url": ""
+        "url": "https://nuphy.com/products/kick75",
+        "_note": "Cloudflare 擋 .json API，暫時 manual"
+      },
+      {
+        "brand": "MelGeek",
+        "model": "O2 Mac版",
+        "site": "shopify",
+        "url": "https://www.melgeek.com/products/o2-tri-mode-wireless-mechanical-keyboard",
+        "update_price": false,
+        "_note": "國際官網 USD 定價，price 人工維護 CNY"
       }
     ]
   },
