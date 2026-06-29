@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-06-29",
   "currency": "CNY",
-  "draft": false,
+  "draft": true,
   "categories": {
     "kb": {
       "label": "矮軸鍵盤",
@@ -14,48 +14,6 @@
         "供电续航"
       ],
       "items": [
-        {
-          "brand": "洛斐 Lofree",
-          "model": "小順青春版",
-          "price": 399,
-          "size": "316.8*138*23.5 mm",
-          "weight": "550 g",
-          "specs_detail": {
-            "连接方式": "蓝牙5.4/2.4G/有线 三模",
-            "按键数": "84键",
-            "按键类型": "凯华x洛斐 全POM矮轴(轻灵轴)",
-            "按键行程": "全程2.8mm/触发1.2mm",
-            "按键寿命": "5000万次",
-            "供电续航": "2000mAh,关灯约80小时"
-          },
-          "sell": "",
-          "image": "images/lofree-flow-lite84.jpg",
-          "source_url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard",
-          "rating": null,
-          "reviews": null,
-          "launched": "2024"
-        },
-        {
-          "brand": "AESCO",
-          "model": "A83 Air",
-          "price": 699,
-          "size": "315*132*30 mm",
-          "weight": "1030 g",
-          "specs_detail": {
-            "连接方式": "蓝牙5.0/2.4G/有线 三模",
-            "按键数": "83键",
-            "按键类型": "凯华定制全POM矮轴(薄荷轴)",
-            "按键行程": "全程2.8mm/触发1.2mm",
-            "按键寿命": "5000万次",
-            "供电续航": "3800mAh,最长630小时"
-          },
-          "sell": "",
-          "image": "images/aesco-a83-air.png",
-          "source_url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard",
-          "rating": null,
-          "reviews": null,
-          "launched": "2026"
-        },
         {
           "brand": "珂芝 KZZI",
           "model": "i75青春版",
@@ -78,25 +36,53 @@
           "launched": "2025"
         },
         {
-          "brand": "洛斐 Lofree",
-          "model": "小順 FLOW2",
-          "price": 699,
-          "size": "316.8*138*23.5 mm(84键)",
-          "weight": "550 g(84键)",
-          "specs_detail": {
-            "连接方式": "蓝牙/2.4G/有线 三模",
-            "按键数": "68/84/100键 可选",
-            "按键类型": "凯华Cloud系列矮轴,热插拔/Gasket",
-            "按键行程": "—",
-            "按键寿命": "—",
-            "供电续航": "3000mAh(84键)"
-          },
+          "brand": "Keychron",
+          "model": "J9 Ultra",
+          "price": null,
+          "size": "—",
+          "weight": "—",
+          "specs_detail": {},
           "sell": "",
-          "image": "images/lofree-flow2.png",
-          "source_url": "https://www.lofree.co/products/flow-2-100-low-profile-mechanical-keyboard",
+          "image": "",
+          "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": "2025"
+          "launched": null
+        },
+        {
+          "brand": "洛斐 Lofree",
+          "model": "小順青春版",
+          "price": 399,
+          "size": "316.8*138*23.5 mm",
+          "weight": "550 g",
+          "specs_detail": {
+            "连接方式": "蓝牙5.4/2.4G/有线 三模",
+            "按键数": "84键",
+            "按键类型": "凯华x洛斐 全POM矮轴(轻灵轴)",
+            "按键行程": "全程2.8mm/触发1.2mm",
+            "按键寿命": "5000万次",
+            "供电续航": "2000mAh,关灯约80小时"
+          },
+          "sell": "",
+          "image": "https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_Marble_PI01.webp",
+          "source_url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2024"
+        },
+        {
+          "brand": "AKKO",
+          "model": "Air 01",
+          "price": null,
+          "size": "—",
+          "weight": "—",
+          "specs_detail": {},
+          "sell": "",
+          "image": "",
+          "source_url": "",
+          "rating": null,
+          "reviews": null,
+          "launched": null
         },
         {
           "brand": "NuPhy",
@@ -120,6 +106,62 @@
           "launched": "2025"
         },
         {
+          "brand": "AESCO",
+          "model": "A83 Air",
+          "price": 699,
+          "size": "315*132*30 mm",
+          "weight": "1030 g",
+          "specs_detail": {
+            "连接方式": "蓝牙5.0/2.4G/有线 三模",
+            "按键数": "83键",
+            "按键类型": "凯华定制全POM矮轴(薄荷轴)",
+            "按键行程": "全程2.8mm/触发1.2mm",
+            "按键寿命": "5000万次",
+            "供电续航": "3800mAh,最长630小时"
+          },
+          "sell": "",
+          "image": "images/aesco-a83-air.png",
+          "source_url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2026"
+        },
+        {
+          "brand": "洛斐 Lofree",
+          "model": "小順 FLOW2",
+          "price": 699,
+          "size": "316.8*138*23.5 mm(84键)",
+          "weight": "550 g(84键)",
+          "specs_detail": {
+            "连接方式": "蓝牙/2.4G/有线 三模",
+            "按键数": "68/84/100键 可选",
+            "按键类型": "凯华Cloud系列矮轴,热插拔/Gasket",
+            "按键行程": "—",
+            "按键寿命": "—",
+            "供电续航": "3000mAh(84键)"
+          },
+          "sell": "",
+          "image": "https://cdn.shopify.com/s/files/1/2779/9046/files/Flow2100_SpaceGray_PI01.png",
+          "source_url": "https://www.lofree.co/products/flow-2-100-low-profile-mechanical-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": "2025"
+        },
+        {
+          "brand": "NuPhy",
+          "model": "Air96 V2",
+          "price": null,
+          "size": "—",
+          "weight": "—",
+          "specs_detail": {},
+          "sell": "",
+          "image": "",
+          "source_url": "https://nuphy.com/products/air96-v2",
+          "rating": null,
+          "reviews": null,
+          "launched": null
+        },
+        {
           "brand": "NuPhy",
           "model": "Kick75",
           "price": 799,
@@ -135,10 +177,24 @@
           },
           "sell": "",
           "image": "images/nuphy-kick75.jpg",
-          "source_url": "https://nuphy.com.tw/products/nuphy-kick75-hybrid-profile-custom-wireless-mechanical-keyboard",
+          "source_url": "https://nuphy.com/products/kick75",
           "rating": null,
           "reviews": null,
           "launched": "2025"
+        },
+        {
+          "brand": "MelGeek",
+          "model": "O2 Mac版",
+          "price": null,
+          "size": "—",
+          "weight": "—",
+          "specs_detail": {},
+          "sell": "",
+          "image": "https://cdn.shopify.com/s/files/1/0078/2863/5712/files/O2_for_Mac_keyboard.jpg",
+          "source_url": "https://www.melgeek.com/products/o2-tri-mode-wireless-mechanical-keyboard",
+          "rating": null,
+          "reviews": null,
+          "launched": null
         }
       ]
     },
