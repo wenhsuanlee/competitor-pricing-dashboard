@@ -102,6 +102,30 @@
   .row .val.none{color:var(--muted);font-weight:500}
   .empty{color:var(--muted);font-size:13px;text-align:center;padding:30px}
   footer{margin-top:30px;color:var(--muted);font-size:12px;text-align:center}
+  /* update button */
+  .header-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .update-btn{background:var(--panel);border:1px solid var(--line);color:var(--muted);
+    padding:6px 14px;border-radius:8px;font-size:12.5px;cursor:pointer;white-space:nowrap;
+    transition:border-color .15s,color .15s}
+  .update-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+  .update-btn:disabled{opacity:.5;cursor:default}
+  .update-btn.ok{border-color:var(--accent2);color:var(--accent2)}
+  /* PAT modal */
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;
+    align-items:center;justify-content:center;z-index:100}
+  .modal-overlay.hidden{display:none}
+  .modal-box{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:24px;width:min(420px,90vw);display:flex;flex-direction:column;gap:14px}
+  .modal-box h3{margin:0;font-size:16px}
+  .modal-box p{margin:0;font-size:13px;color:var(--muted);line-height:1.6}
+  .modal-box input{width:100%;background:var(--panel2);border:1px solid var(--line);
+    color:var(--txt);border-radius:8px;padding:9px 12px;font-size:13px;font-family:monospace}
+  .modal-box input:focus{outline:none;border-color:var(--accent)}
+  .modal-actions{display:flex;gap:8px;justify-content:flex-end}
+  .modal-actions button{padding:7px 18px;border-radius:8px;font-size:13px;cursor:pointer;border:1px solid var(--line)}
+  .modal-actions .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+  .modal-actions .btn-secondary{background:none;color:var(--muted)}
+  .pat-note{font-size:11.5px;color:#475569}
   @media(max-width:640px){
     .kpis{grid-template-columns:repeat(2,1fr)}
     .row{grid-template-columns:110px 1fr 60px}
@@ -112,9 +136,30 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>鍵鼠競品study</h1>
+    <div class="header-row">
+      <h1>鍵鼠競品study</h1>
+      <button class="update-btn" id="updateBtn" onclick="triggerUpdate()">↻ 更新資料</button>
+    </div>
     <div class="sub" id="sub">載入中…</div>
   </header>
+
+  <!-- PAT Modal -->
+  <div class="modal-overlay hidden" id="patModal">
+    <div class="modal-box">
+      <h3>設定 GitHub PAT</h3>
+      <p>輸入一次後儲存於本機瀏覽器，用來觸發 GitHub Actions 爬蟲更新資料。<br>
+         PAT 需要 <b>Actions: Read and write</b> 權限（僅限此 repo）。</p>
+      <input type="password" id="patInput" placeholder="github_pat_…" autocomplete="off"
+             onkeydown="if(event.key==='Enter')savePat()">
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closePatModal()">取消</button>
+        <button class="btn-primary" onclick="savePat()">儲存並觸發</button>
+      </div>
+      <div class="pat-note">PAT 僅存於您的瀏覽器 localStorage，不會傳送至任何第三方伺服器。
+        已設定過？<a href="#" style="color:var(--accent)" onclick="clearPat();return false">清除重設</a>
+      </div>
+    </div>
+  </div>
 
   <div class="banner hidden" id="banner"></div>
 
@@ -584,6 +629,105 @@ function viewWeightBattery(items,cur,catKey){
       ${circles}${legSvg}
     </svg>${note}</div>`;
 }
+
+// ---- GitHub Actions 手動觸發 ----
+const GH_REPO     = 'wenhsuanlee/competitor-pricing-dashboard';
+const GH_WORKFLOW = 'update-data.yml';
+
+function showPatModal(){
+  $('#patModal').classList.remove('hidden');
+  setTimeout(()=>$('#patInput').focus(), 80);
+}
+function closePatModal(){ $('#patModal').classList.add('hidden'); }
+function clearPat(){
+  localStorage.removeItem('gh_pat');
+  $('#patInput').value='';
+  closePatModal();
+  setUpdateBtn('idle');
+}
+function savePat(){
+  const pat=$('#patInput').value.trim();
+  if(!pat){ $('#patInput').focus(); return; }
+  localStorage.setItem('gh_pat', pat);
+  closePatModal();
+  doTrigger(pat);
+}
+
+function setUpdateBtn(state, msg){
+  const btn=$('#updateBtn');
+  const map={idle:['↻ 更新資料',false,''],
+             loading:['觸發中…',true,''],
+             ok:['✓ 已觸發',true,'ok'],
+             polling:['等待更新…',true,''],
+             done:['↻ 更新資料',false,'ok']};
+  const [text,dis,cls]=map[state]||map.idle;
+  btn.textContent=text; btn.disabled=dis;
+  btn.className='update-btn'+(cls?' '+cls:'');
+  if(msg) showBanner(msg,'info');
+}
+
+async function triggerUpdate(){
+  const pat=localStorage.getItem('gh_pat');
+  if(!pat){ showPatModal(); return; }
+  await doTrigger(pat);
+}
+
+async function doTrigger(pat){
+  setUpdateBtn('loading');
+  try{
+    const res=await fetch(
+      `https://api.github.com/repos/${GH_REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`,
+      { method:'POST',
+        headers:{'Authorization':`Bearer ${pat}`,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
+        body:JSON.stringify({ref:'main'}) }
+    );
+    if(res.status===204){
+      setUpdateBtn('ok','爬蟲已啟動，約 2–3 分鐘後自動重整頁面。');
+      pollCompletion(pat);
+    } else if(res.status===401||res.status===403){
+      localStorage.removeItem('gh_pat');
+      setUpdateBtn('idle');
+      showBanner('PAT 無效或權限不足，請重新設定。','warn');
+    } else {
+      throw new Error('HTTP '+res.status);
+    }
+  }catch(e){
+    setUpdateBtn('idle');
+    showBanner('觸發失敗：'+e.message,'warn');
+  }
+}
+
+async function pollCompletion(pat){
+  const deadline=Date.now()+5*60*1000;
+  await new Promise(r=>setTimeout(r,12000)); // 等 Actions 啟動
+  while(Date.now()<deadline){
+    try{
+      const res=await fetch(
+        `https://api.github.com/repos/${GH_REPO}/actions/runs?per_page=1`,
+        {headers:{'Authorization':`Bearer ${pat}`,'Accept':'application/vnd.github+json'}}
+      );
+      const {workflow_runs:runs=[]}=await res.json();
+      const run=runs[0];
+      if(run?.status==='completed'){
+        if(run.conclusion==='success'){
+          showBanner('資料更新完成！2 秒後自動重整…','info');
+          setTimeout(()=>location.reload(),2000);
+        } else {
+          setUpdateBtn('idle');
+          showBanner(`爬蟲結束但有問題（${run.conclusion}），請到 GitHub Actions 查看 log。`,'warn');
+        }
+        return;
+      }
+      setUpdateBtn('polling');
+    }catch(e){ /* 忽略輪詢錯誤 */ }
+    await new Promise(r=>setTimeout(r,15000));
+  }
+  setUpdateBtn('idle');
+  showBanner('等待逾時，請手動重整頁面確認資料是否已更新。','warn');
+}
+
+// 關閉 modal：點擊背景
+$('#patModal').addEventListener('click', e=>{ if(e.target===e.currentTarget) closePatModal(); });
 
 boot();
 </script>
