@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-06-29",
+  "updated_at": "2026-06-30",
   "currency": "CNY",
-  "draft": false,
+  "draft": true,
   "categories": {
     "kb": {
       "label": "矮軸鍵盤",
