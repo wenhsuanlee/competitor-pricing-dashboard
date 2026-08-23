@@ -430,8 +430,37 @@ function viewCards(items, cur, fields){
     </div>`;}).join('')+'</div>';
 }
 
+let _tableExportItems=[], _tableExportFields=[], _tableExportCur='';
+
+function csvEscape(v){
+  v = v===null||v===undefined ? '' : String(v);
+  return /[",\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v;
+}
+
+function exportTableCSV(){
+  const items=_tableExportItems, fields=_tableExportFields, cur=_tableExportCur;
+  const rowDefs=[
+    ['品牌', i=>i.brand||''],
+    ['型號', i=>i.model||''],
+    ['價格('+cur+')', i=>(i.price===null||i.price===''||i.price===0)?'':i.price],
+    ['上市年份', i=>i.launched||''],
+    ['尺寸', i=>i.size||''],
+    ['重量', i=>i.weight||''],
+    ...fields.map(f=>[f, i=>(i.specs_detail||{})[f]||''])
+  ];
+  const lines=[rowDefs.map(([label])=>csvEscape(label)).join(',')]
+    .concat(items.map(i=>rowDefs.map(([,getter])=>csvEscape(getter(i))).join(',')));
+  const blob=new Blob(['﻿'+lines.join('\r\n')], {type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download=`鍵鼠競品-${DATA.categories[curCat].label}-${DATA.updated_at}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+}
+
 function viewTable(items, cur, fields){
   fields=fields||[];
+  _tableExportItems=items; _tableExportFields=fields; _tableExportCur=cur;
   // 欄標頭：每個品項一欄
   const colHeaders=items.map(i=>{
     const hasPrice=!(i.price===null||i.price===''||i.price===0);
@@ -453,7 +482,10 @@ function viewTable(items, cur, fields){
     const cells=items.map(i=>`<td>${getter(i)}</td>`).join('');
     return `<tr><th class="row-label">${label}</th>${cells}</tr>`;
   }).join('');
-  return `<div class="tablewrap"><table>
+  return `<div style="display:flex;justify-content:flex-end;margin:0 0 10px">
+    <button class="update-btn" onclick="exportTableCSV()">⬇ 下載 Excel (CSV)</button>
+  </div>
+  <div class="tablewrap"><table>
     <thead><tr><th class="spec-corner"></th>${colHeaders}</tr></thead>
     <tbody>${bodyRows}</tbody>
   </table></div>`;

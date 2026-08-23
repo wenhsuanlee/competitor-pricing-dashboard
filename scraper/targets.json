@@ -86,9 +86,9 @@
       },
       {
         "brand": "B.O.W 航世",
-        "model": "MD190L mini",
+        "model": "MD190mini",
         "site": "manual",
-        "url": ""
+        "url": "https://detail.zol.com.cn/2112/2111827/param.shtml"
       },
       {
         "brand": "雷柏 Rapoo",
@@ -103,22 +103,16 @@
         "url": ""
       },
       {
-        "brand": "多彩 Delux",
-        "model": "M618XU",
-        "site": "manual",
-        "url": ""
-      },
-      {
         "brand": "綠聯 UGREEN",
-        "model": "MU008",
+        "model": "M571P",
         "site": "manual",
-        "url": ""
+        "url": "https://www.lulian.cn/product/1365.html"
       },
       {
         "brand": "多彩 Delux",
-        "model": "M618AIR GX",
+        "model": "M618mini",
         "site": "manual",
-        "url": ""
+        "url": "https://detail.zol.com.cn/1265/1264057/param.shtml"
       }
     ]
   }

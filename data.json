@@ -1,7 +1,7 @@
 {
   "updated_at": "2026-08-23",
   "currency": "CNY",
-  "draft": false,
+  "draft": true,
   "categories": {
     "kb": {
       "label": "矮軸鍵盤",
@@ -235,7 +235,8 @@
         "手感",
         "滚轮",
         "颜色",
-        "手型"
+        "手型",
+        "供电方式"
       ],
       "items": [
         {
@@ -251,7 +252,8 @@
             "手感": "垂直58°/人体工学/静音",
             "滚轮": "—",
             "颜色": "黑色/白色",
-            "手型": "大手型"
+            "手型": "大手型",
+            "供电方式": "—"
           },
           "sell": "",
           "image": "images/inphic-x9pro.jpg",
@@ -259,28 +261,6 @@
           "rating": null,
           "reviews": null,
           "launched": null
-        },
-        {
-          "brand": "B.O.W 航世",
-          "model": "MD190L mini",
-          "price": 159,
-          "size": "72.28*76.42*120.24 mm",
-          "weight": "—",
-          "specs_detail": {
-            "连接方式": "2.4G/蓝牙 双模",
-            "分辨率DPI": "800/1200/1600/2400 DPI",
-            "传感器": "—",
-            "手感": "垂直/人体工学/静音",
-            "滚轮": "3D防滑滚轮",
-            "颜色": "—",
-            "手型": "小手型"
-          },
-          "sell": "",
-          "image": "images/bow-md190l-mini.jpg",
-          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
-          "rating": null,
-          "reviews": null,
-          "launched": "2022"
         },
         {
           "brand": "雷柏 Rapoo",
@@ -295,7 +275,8 @@
             "手感": "垂直/人体工学",
             "滚轮": "—",
             "颜色": "商务黑",
-            "手型": "大手型"
+            "手型": "大手型",
+            "供电方式": "乾電池(2×AAA)"
           },
           "sell": "",
           "image": "images/rapoo-mv20.png",
@@ -317,7 +298,8 @@
             "手感": "57°垂直/人体工学(中小手)",
             "滚轮": "SmartWheel 智能滚轮",
             "颜色": "石墨黑/珍珠白/玫瑰粉",
-            "手型": "中手型"
+            "手型": "中手型",
+            "供电方式": "乾電池(1×AA)"
           },
           "sell": "",
           "image": "images/logitech-lift.png",
@@ -327,70 +309,73 @@
           "launched": "2022"
         },
         {
-          "brand": "多彩 Delux",
-          "model": "M618XU",
-          "price": 99,
-          "size": "135.5*100*87 mm",
-          "weight": "约225 g",
+          "brand": "B.O.W 航世",
+          "model": "MD190mini",
+          "price": 89,
+          "size": "约77.5 mm(单边尺寸,±5%)",
+          "weight": "—",
           "specs_detail": {
-            "连接方式": "有线(USB)",
-            "分辨率DPI": "最高4000 DPI",
-            "传感器": "原相 PMW3610 光学",
-            "手感": "垂直/人体工学",
-            "滚轮": "—",
-            "颜色": "—",
-            "手型": "大手型"
+            "连接方式": "2.4G/蓝牙 双模",
+            "分辨率DPI": "800/1200/1600 DPI",
+            "传感器": "—",
+            "手感": "人体工学(小手/女性向设计)",
+            "滚轮": "双向滚轮",
+            "颜色": "黑色",
+            "手型": "小手型",
+            "供电方式": "—"
           },
           "sell": "",
-          "image": "images/delux-m618xu.jpg",
-          "source_url": "https://www.deluxworld.com/pro-detail-M618X.html",
+          "image": "",
+          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
           "rating": null,
           "reviews": null,
-          "launched": "2020"
+          "launched": null
         },
         {
           "brand": "綠聯 UGREEN",
-          "model": "MU008",
-          "price": 119,
-          "size": "135*83*78 mm",
-          "weight": "130 g(含电池)",
+          "model": "M571P",
+          "price": null,
+          "size": "—",
+          "weight": "约110 g(含电池约135 g)",
           "specs_detail": {
-            "连接方式": "无线2.4G/蓝牙5.0 双模",
+            "连接方式": "无线2.4G/蓝牙 双模",
             "分辨率DPI": "1000/1600/2000/4000 DPI",
-            "传感器": "3D光学传感器",
-            "手感": "人体工学垂直(右手)",
-            "滚轮": "有",
-            "颜色": "黑色/灰色",
-            "手型": "大手型"
+            "传感器": "—",
+            "手感": "57°人体工学垂直",
+            "滚轮": "—",
+            "颜色": "—",
+            "手型": "—",
+            "供电方式": "乾電池(1×AA)"
           },
           "sell": "",
-          "image": "images/ugreen-mu008.jpg",
-          "source_url": "https://www.lulian.cn/product/1068.html",
+          "image": "https://images.lulian.cn/upload/202511/1763025735.webp",
+          "source_url": "https://www.lulian.cn/product/1365.html",
           "rating": null,
           "reviews": null,
-          "launched": "2022"
+          "launched": null
         },
         {
           "brand": "多彩 Delux",
-          "model": "M618AIR GX",
-          "price": 69,
-          "size": "115*80.7*75.2 mm",
+          "model": "M618mini",
+          "price": 89,
+          "size": "103×89×69 mm",
           "weight": "—",
           "specs_detail": {
-            "连接方式": "无线2.4G(干电池版)",
-            "分辨率DPI": "最高4000 DPI",
+            "连接方式": "有线/2.4G/蓝牙 三模",
+            "分辨率DPI": "800/1200/1600/2400 DPI 可调",
             "传感器": "—",
-            "手感": "垂直/人体工学/静音(中小手)",
-            "滚轮": "—",
-            "颜色": "黑/樱花粉/薰衣紫/极地白/松叶绿",
-            "手型": "中手型"
+            "手感": "人体工学垂直,侧立式设计",
+            "滚轮": "无极静音滚轮",
+            "颜色": "白/黑/蓝/红/粉/银",
+            "手型": "—",
+            "供电方式": "充電式(约1000mAh,Type-C)"
           },
           "sell": "",
-          "image": "images/delux-m618air-gx.png",
-          "source_url": "https://www.deluxworld.com/",
+          "image": "https://2f.zol-img.com.cn/product/224_280x210/793/ceuQQSUdg0dRY.jpg",
+          "source_url": "https://detail.zol.com.cn/1265/1264057/param.shtml",
           "rating": null,
           "reviews": null,
-          "launched": "2025"
+          "launched": null
         }
       ]
     }
