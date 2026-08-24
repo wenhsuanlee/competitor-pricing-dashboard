@@ -506,15 +506,14 @@ function buildRowDefs(cur, fields){
 
 function exportTableCSV(){
   const items=_tableExportItems, fields=_tableExportFields, cur=_tableExportCur;
-  // CSV 採標準表格方向：品牌/型號逐列(橫列=一款品項)，規格欄位為縱欄(欄=一個規格)
-  const rowDefs=buildRowDefs(cur, fields);
-  const header=['品牌','型號','價格('+cur+')', ...rowDefs.map(([label])=>label)];
-  const lines=[header.map(csvEscape).join(',')].concat(
-    items.map(i=>{
-      const priceVal=(i.price===null||i.price===''||i.price===0)?'':i.price;
-      return [i.brand||'', i.model||'', priceVal, ...rowDefs.map(([,getter])=>getter(i))].map(csvEscape).join(',');
-    })
-  );
+  // CSV 與畫面上的對照表一致：每一列是一個屬性(品牌/型號/價格/規格...),每一欄是一個品項
+  const rowDefs=[
+    ['品牌', i=>i.brand||''],
+    ['型號', i=>i.model||''],
+    ['價格('+cur+')', i=>(i.price===null||i.price===''||i.price===0)?'':i.price],
+    ...buildRowDefs(cur, fields),
+  ];
+  const lines=rowDefs.map(([label,getter])=>[label, ...items.map(getter)].map(csvEscape).join(','));
   const blob=new Blob(['﻿'+lines.join('\r\n')], {type:'text/csv;charset=utf-8;'});
   const url=URL.createObjectURL(blob);
   const a=document.createElement('a');
