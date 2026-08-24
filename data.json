@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-23",
+  "updated_at": "2026-08-24",
   "currency": "CNY",
   "draft": true,
   "categories": {
@@ -235,8 +235,7 @@
         "手感",
         "滚轮",
         "颜色",
-        "手型",
-        "供电方式"
+        "手型"
       ],
       "items": [
         {
@@ -258,6 +257,29 @@
           "sell": "",
           "image": "images/inphic-x9pro.jpg",
           "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse",
+          "rating": null,
+          "reviews": null,
+          "launched": null
+        },
+        {
+          "brand": "B.O.W 航世",
+          "model": "MD190mini",
+          "price": 89,
+          "size": "约77.5 mm(单边尺寸,±5%)",
+          "weight": "—",
+          "specs_detail": {
+            "连接方式": "2.4G/蓝牙 双模",
+            "分辨率DPI": "800/1200/1600 DPI",
+            "传感器": "—",
+            "手感": "人体工学(小手/女性向设计)",
+            "滚轮": "双向滚轮",
+            "颜色": "黑色",
+            "手型": "小手型",
+            "供电方式": "—"
+          },
+          "sell": "",
+          "image": "",
+          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
           "rating": null,
           "reviews": null,
           "launched": null
@@ -307,29 +329,6 @@
           "rating": null,
           "reviews": null,
           "launched": "2022"
-        },
-        {
-          "brand": "B.O.W 航世",
-          "model": "MD190mini",
-          "price": 89,
-          "size": "约77.5 mm(单边尺寸,±5%)",
-          "weight": "—",
-          "specs_detail": {
-            "连接方式": "2.4G/蓝牙 双模",
-            "分辨率DPI": "800/1200/1600 DPI",
-            "传感器": "—",
-            "手感": "人体工学(小手/女性向设计)",
-            "滚轮": "双向滚轮",
-            "颜色": "黑色",
-            "手型": "小手型",
-            "供电方式": "—"
-          },
-          "sell": "",
-          "image": "",
-          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
-          "rating": null,
-          "reviews": null,
-          "launched": null
         },
         {
           "brand": "綠聯 UGREEN",
