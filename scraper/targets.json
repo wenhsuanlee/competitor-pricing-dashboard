@@ -115,5 +115,76 @@
         "url": "https://detail.zol.com.cn/1265/1264057/param.shtml"
       }
     ]
+  },
+  "wheel": {
+    "label": "電磁滾輪滑鼠",
+    "items": [
+      {
+        "brand": "羅技 Logitech",
+        "model": "MX Master 3S",
+        "site": "manual",
+        "url": "https://www.logitech.com/en-us/shop/p/mx-master-3s"
+      },
+      {
+        "brand": "羅技 Logitech",
+        "model": "MX Master 4",
+        "site": "manual",
+        "url": "https://www.logitech.com/en-us/shop/p/mx-master-4"
+      },
+      {
+        "brand": "羅技 Logitech",
+        "model": "MX Anywhere 3S",
+        "site": "manual",
+        "url": "https://www.logitech.com/en-us/shop/p/mx-anywhere-3s"
+      },
+      {
+        "brand": "Keychron",
+        "model": "M6",
+        "site": "manual",
+        "url": "https://www.keychron.com/products/keychron-m6-wireless-mouse",
+        "_note": "官網為美金定價,CNY 價格待人工核實"
+      },
+      {
+        "brand": "小米 Xiaomi",
+        "model": "无线鼠标4 Pro",
+        "site": "manual",
+        "url": "https://www.ithome.com/0/973/353.htm"
+      },
+      {
+        "brand": "雷柏 Rapoo",
+        "model": "MT560",
+        "site": "manual",
+        "url": "https://www.rapoo.cn/product/817"
+      }
+    ]
+  },
+  "charger": {
+    "label": "氮化鎵充電器",
+    "_note": "資料來源為內部品牌SPEC比較表(100W/140W無螢幕氮化鎵)，非公開網頁，故 url 留空、皆為 manual",
+    "items": [
+      { "brand": "Adol", "model": "AC100-050A(2025版)", "site": "manual", "url": "" },
+      { "brand": "Adol", "model": "AC100", "site": "manual", "url": "" },
+      { "brand": "綠聯 UGREEN", "model": "X564", "site": "manual", "url": "" },
+      { "brand": "酷態科 CUKTECH", "model": "AD1003", "site": "manual", "url": "" },
+      { "brand": "倍思 Baseus", "model": "CCXFK100CC", "site": "manual", "url": "" },
+      { "brand": "安克 Anker", "model": "A2145", "site": "manual", "url": "" },
+      { "brand": "綠聯 UGREEN", "model": "X757", "site": "manual", "url": "" },
+      { "brand": "安克 Anker", "model": "A2688(智显充Prime系列)", "site": "manual", "url": "" },
+      { "brand": "Adol", "model": "AC140-020A(2025版)", "site": "manual", "url": "" },
+      { "brand": "Adol", "model": "AC140", "site": "manual", "url": "" },
+      { "brand": "安克 Anker", "model": "B2697", "site": "manual", "url": "" },
+      { "brand": "酷態科 CUKTECH", "model": "AD1404U", "site": "manual", "url": "" },
+      { "brand": "綠聯 UGREEN", "model": "X569", "site": "manual", "url": "" },
+      { "brand": "綠聯 UGREEN", "model": "CD289", "site": "manual", "url": "" },
+      { "brand": "奧海 AOHI", "model": "AOC-C012", "site": "manual", "url": "" },
+      { "brand": "安克 Anker", "model": "智显充 Lite 100W", "site": "manual", "url": "https://finance.sina.com.cn/tech/digi/2025-05-17/doc-inewwatx7474862.shtml" },
+      { "brand": "安克 Anker", "model": "智显充 Pro/Prime 160W", "site": "manual", "url": "https://www.ithome.com/0/910/319.htm" },
+      { "brand": "酷態科 CUKTECH", "model": "10号 Ultra 120W", "site": "manual", "url": "https://zhongce.sina.com.cn/iframe/article/view/191093/" },
+      { "brand": "綠聯 UGREEN", "model": "速显充 45W(X740)", "site": "manual", "url": "https://www.lulian.cn/product/1661.html" },
+      { "brand": "綠聯 UGREEN", "model": "速显充 160W(X774)", "site": "manual", "url": "https://www.chongdiantou.com/archives/1765444464777.html" },
+      { "brand": "倍思 Baseus", "model": "100W屏显充", "site": "manual", "url": "https://finance.sina.com.cn/tech/digi/2025-09-26/doc-infrvwzh0403867.shtml" },
+      { "brand": "倍思 Baseus", "model": "140W屏显充(E01207)", "site": "manual", "url": "https://www.ithome.com/0/890/757.htm" },
+      { "brand": "圖拉斯 THULOS", "model": "大眼仔 60W", "site": "manual", "url": "https://www.ithome.com/0/950/463.htm" }
+    ]
   }
 }

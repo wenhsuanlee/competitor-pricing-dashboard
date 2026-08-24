@@ -75,8 +75,16 @@ SPEC_SCHEMA = {
 }
 
 
-def spec_fields_of(cat_key):
-    return [canon for canon, _ in SPEC_SCHEMA.get(cat_key, [])]
+def spec_fields_of(cat_key, old_data=None):
+    """有 SPEC_SCHEMA 定義(mouse/kb)時用它;否則沿用 data.json 裡舊有的 spec_fields,
+    讓沒有專屬抓取規則的新分類(例如電磁滾輪滑鼠/氮化鎵充電器)不會被清空欄位定義。"""
+    if cat_key in SPEC_SCHEMA:
+        return [canon for canon, _ in SPEC_SCHEMA[cat_key]]
+    if old_data:
+        old_cat = (old_data.get("categories") or {}).get(cat_key) or {}
+        if old_cat.get("spec_fields"):
+            return old_cat["spec_fields"]
+    return []
 
 
 def build_specs_detail(cat_key, pairs):
@@ -271,6 +279,7 @@ def main() -> int:
                 "size": prev.get("size", "—"),
                 "weight": prev.get("weight", "—"),
                 "specs_detail": prev.get("specs_detail", {}),
+                "ksp": prev.get("ksp", []),
                 "sell": prev.get("sell", ""),
                 "image": prev.get("image", ""),
                 "source_url": url or prev.get("source_url", ""),
@@ -339,7 +348,7 @@ def main() -> int:
 
         out["categories"][cat_key] = {
             "label": cat.get("label", cat_key),
-            "spec_fields": spec_fields_of(cat_key),
+            "spec_fields": spec_fields_of(cat_key, old_data),
             "items": items_out,
         }
 
