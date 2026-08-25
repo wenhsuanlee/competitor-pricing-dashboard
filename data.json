@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-24",
+  "updated_at": "2026-08-25",
   "currency": "CNY",
   "draft": true,
   "categories": {
@@ -28,7 +28,11 @@
             "按键寿命": "—",
             "供电续航": "—"
           },
-          "ksp": ["87鍵75%配列,入門矮軸性價比高", "全鍵熱插拔,白雪軸手感佳", "三模連接(藍牙/2.4G/有線)"],
+          "ksp": [
+            "87鍵75%配列,入門矮軸性價比高",
+            "全鍵熱插拔,白雪軸手感佳",
+            "三模連接(藍牙/2.4G/有線)"
+          ],
           "sell": "",
           "image": "images/kzzi-i75-youth.jpg",
           "source_url": "https://diy.zol.com.cn/1009/10093646.html",
@@ -50,7 +54,11 @@
             "按键寿命": "—",
             "供电续航": "2000mAh,关灯最长635小时"
           },
-          "ksp": ["Milk POM矮軸,三色軸體可選", "2.4G支援8KHz回報率", "2000mAh續航最長635小時"],
+          "ksp": [
+            "Milk POM矮軸,三色軸體可選",
+            "2.4G支援8KHz回報率",
+            "2000mAh續航最長635小時"
+          ],
           "sell": "",
           "image": "images/keychron-j9-ultra.jpg",
           "source_url": "https://www.keychron.com/products/keychron-j9-ultra-wireless-mechanical-keyboard",
@@ -72,7 +80,11 @@
             "按键寿命": "5000万次",
             "供电续航": "2000mAh,关灯约80小时"
           },
-          "ksp": ["凱華x洛斐聯名全POM矮軸", "觸發僅1.2mm,反應快", "5000萬次按鍵壽命"],
+          "ksp": [
+            "凱華x洛斐聯名全POM矮軸",
+            "觸發僅1.2mm,反應快",
+            "5000萬次按鍵壽命"
+          ],
           "sell": "",
           "image": "https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_Marble_PI01.webp",
           "source_url": "https://www.lofree.co/products/flow-lite84-mechanical-keyboard",
@@ -94,7 +106,11 @@
             "按键寿命": "5000万次",
             "供电续航": "4500mAh"
           },
-          "ksp": ["Kailh矮軸,線性/段落雙軸體可選", "4500mAh電量,同級最大", "5000萬次按鍵壽命"],
+          "ksp": [
+            "Kailh矮軸,線性/段落雙軸體可選",
+            "4500mAh電量,同級最大",
+            "5000萬次按鍵壽命"
+          ],
           "sell": "",
           "image": "images/akko-air01.avif",
           "source_url": "https://en.akkogear.com/product/air-01-low-profile-mechanical-keyboard/",
@@ -116,7 +132,11 @@
             "按键寿命": "—",
             "供电续航": "3000mAh,关灯约1000小时"
           },
-          "ksp": ["三種軸重(45/50/42g)熱插拔可換", "3000mAh關燈續航約1000小時", "84鍵75%配列,機身輕便"],
+          "ksp": [
+            "三種軸重(45/50/42g)熱插拔可換",
+            "3000mAh關燈續航約1000小時",
+            "84鍵75%配列,機身輕便"
+          ],
           "sell": "",
           "image": "images/nuphy-node75.webp",
           "source_url": "https://nuphy.com/products/nuphy-node75-low-profile-wireless-mechanical-keyboard",
@@ -138,7 +158,11 @@
             "按键寿命": "5000万次",
             "供电续航": "3800mAh,最长630小时"
           },
-          "ksp": ["凱華定制全POM薄荷軸", "3800mAh大電量,續航達630小時", "83鍵緊湊配列"],
+          "ksp": [
+            "凱華定制全POM薄荷軸",
+            "3800mAh大電量,續航達630小時",
+            "83鍵緊湊配列"
+          ],
           "sell": "",
           "image": "images/aesco-a83-air.png",
           "source_url": "https://shop.rapoo.com/products/a83-air-backlit-mechanical-gaming-keyboard",
@@ -160,7 +184,11 @@
             "按键寿命": "—",
             "供电续航": "3000mAh(84键)"
           },
-          "ksp": ["68/84/100鍵三種配列可選", "Gasket結構+熱插拔雙優勢", "凱華Cloud系列矮軸"],
+          "ksp": [
+            "68/84/100鍵三種配列可選",
+            "Gasket結構+熱插拔雙優勢",
+            "凱華Cloud系列矮軸"
+          ],
           "sell": "",
           "image": "https://cdn.shopify.com/s/files/1/2779/9046/files/Flow2100_SpaceGray_PI01.png",
           "source_url": "https://www.lofree.co/products/flow-2-100-low-profile-mechanical-keyboard",
@@ -182,7 +210,11 @@
             "按键寿命": "—",
             "供电续航": "4000mAh,关灯最长220小时"
           },
-          "ksp": ["100鍵96%配列,含數字鍵區", "Gateron KS-33矮軸,線性/段落可選", "4000mAh大電量"],
+          "ksp": [
+            "100鍵96%配列,含數字鍵區",
+            "Gateron KS-33矮軸,線性/段落可選",
+            "4000mAh大電量"
+          ],
           "sell": "",
           "image": "images/nuphy-air96-v2.jpg",
           "source_url": "https://nuphy.com/products/air96-v2",
@@ -204,7 +236,11 @@
             "按键寿命": "—",
             "供电续航": "2500mAh,全灯关最长360小时"
           },
-          "ksp": ["矮軸/高軸雙軌並存,一鍵盤兩種手感", "Gateron熱插拔軸座", "2500mAh續航達360小時"],
+          "ksp": [
+            "矮軸/高軸雙軌並存,一鍵盤兩種手感",
+            "Gateron熱插拔軸座",
+            "2500mAh續航達360小時"
+          ],
           "sell": "",
           "image": "images/nuphy-kick75.jpg",
           "source_url": "https://nuphy.com/products/kick75",
@@ -226,7 +262,11 @@
             "按键寿命": "—",
             "供电续航": "2500mAh,约7个月(日8h低功耗)"
           },
-          "ksp": ["原生Mac配列與按鍵印刷", "Kailh Sunlight矮軸,線性手感", "2500mAh續航約7個月(日8h低功耗)"],
+          "ksp": [
+            "原生Mac配列與按鍵印刷",
+            "Kailh Sunlight矮軸,線性手感",
+            "2500mAh續航約7個月(日8h低功耗)"
+          ],
           "sell": "",
           "image": "https://cdn.shopify.com/s/files/1/0078/2863/5712/files/O2_for_Mac_Wireless_Mechanical_Keyboard_6.jpg",
           "source_url": "https://www.melgeek.com/products/o2-tri-mode-wireless-mechanical-keyboard",
@@ -264,13 +304,45 @@
             "手型": "大手型",
             "供电方式": "—"
           },
-          "ksp": ["三模連接(2.4G/藍牙/有線)", "DPI最高12000,多檔可調", "58°垂直,大手型設計"],
+          "ksp": [
+            "三模連接(2.4G/藍牙/有線)",
+            "DPI最高12000,多檔可調",
+            "58°垂直,大手型設計"
+          ],
           "sell": "",
           "image": "images/inphic-x9pro.jpg",
           "source_url": "https://www.inphic.com/products/inphic-x9-pro-vertical-ergonomic-precision-dual-mouse",
           "rating": null,
           "reviews": null,
           "launched": "2025"
+        },
+        {
+          "brand": "B.O.W 航世",
+          "model": "MD190mini",
+          "price": 89,
+          "size": "约77.5 mm(单边尺寸,±5%)",
+          "weight": "—",
+          "specs_detail": {
+            "连接方式": "2.4G/蓝牙 双模",
+            "分辨率DPI": "800/1200/1600 DPI",
+            "传感器": "—",
+            "手感": "人体工学(小手/女性向设计)",
+            "滚轮": "双向滚轮",
+            "颜色": "黑色",
+            "手型": "小手型",
+            "供电方式": "—"
+          },
+          "ksp": [
+            "專為小手/女性手型設計",
+            "雙向滾輪,操作直覺",
+            "雙模連接(2.4G/藍牙),輕巧便攜"
+          ],
+          "sell": "",
+          "image": "https://2e.zol-img.com.cn/product/270_280x210/976/ceKAp1Jkiyjz2.png",
+          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
+          "rating": null,
+          "reviews": null,
+          "launched": null
         },
         {
           "brand": "雷柏 Rapoo",
@@ -288,7 +360,11 @@
             "手型": "大手型",
             "供电方式": "乾電池(2×AAA)"
           },
-          "ksp": ["2節AAA電池,續航約9個月", "光學引擎追蹤穩定", "大手型垂直人體工學"],
+          "ksp": [
+            "2節AAA電池,續航約9個月",
+            "光學引擎追蹤穩定",
+            "大手型垂直人體工學"
+          ],
           "sell": "",
           "image": "images/rapoo-mv20.png",
           "source_url": "https://www.rapoo.cn/product/589",
@@ -312,37 +388,17 @@
             "手型": "中手型",
             "供电方式": "乾電池(1×AA)"
           },
-          "ksp": ["SmartWheel智能滾輪,平滑/齒感雙模式", "3通道快速切換裝置", "1顆AA電池可用長達2年"],
+          "ksp": [
+            "SmartWheel智能滾輪,平滑/齒感雙模式",
+            "3通道快速切換裝置",
+            "1顆AA電池可用長達2年"
+          ],
           "sell": "",
           "image": "images/logitech-lift.png",
           "source_url": "https://www.logitech.com/zh-tw/products/mice/lift-vertical-ergonomic-mouse.html",
           "rating": null,
           "reviews": null,
           "launched": "2022"
-        },
-        {
-          "brand": "B.O.W 航世",
-          "model": "MD190mini",
-          "price": 89,
-          "size": "约77.5 mm(单边尺寸,±5%)",
-          "weight": "—",
-          "specs_detail": {
-            "连接方式": "2.4G/蓝牙 双模",
-            "分辨率DPI": "800/1200/1600 DPI",
-            "传感器": "—",
-            "手感": "人体工学(小手/女性向设计)",
-            "滚轮": "双向滚轮",
-            "颜色": "黑色",
-            "手型": "小手型",
-            "供电方式": "—"
-          },
-          "ksp": ["專為小手/女性手型設計", "雙向滾輪,操作直覺", "雙模連接(2.4G/藍牙),輕巧便攜"],
-          "sell": "",
-          "image": "https://2e.zol-img.com.cn/product/270_280x210/976/ceKAp1Jkiyjz2.png",
-          "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
-          "rating": null,
-          "reviews": null,
-          "launched": null
         },
         {
           "brand": "綠聯 UGREEN",
@@ -360,7 +416,11 @@
             "手型": "—",
             "供电方式": "乾電池(1×AA)"
           },
-          "ksp": ["57°人體工學垂直設計", "DPI四檔可調(1000-4000)", "雙模連接,可同時配對2台設備"],
+          "ksp": [
+            "57°人體工學垂直設計",
+            "DPI四檔可調(1000-4000)",
+            "雙模連接,可同時配對2台設備"
+          ],
           "sell": "",
           "image": "",
           "source_url": "https://www.lulian.cn/product/1365.html",
@@ -384,7 +444,11 @@
             "手型": "—",
             "供电方式": "充電式(约1000mAh,Type-C)"
           },
-          "ksp": ["三模連接(有線/2.4G/藍牙)", "無極靜音滾輪,操作安靜", "Type-C充電,約1000mAh"],
+          "ksp": [
+            "三模連接(有線/2.4G/藍牙)",
+            "無極靜音滾輪,操作安靜",
+            "Type-C充電,約1000mAh"
+          ],
           "sell": "",
           "image": "https://2f.zol-img.com.cn/product/224_280x210/793/ceuQQSUdg0dRY.jpg",
           "source_url": "https://detail.zol.com.cn/1265/1264057/param.shtml",
@@ -419,7 +483,11 @@
             "颜色": "石墨黑/淺灰",
             "供电方式": "充電式(USB-C,滿電約15天)"
           },
-          "ksp": ["MagSpeed電磁滾輪,速度與精準兼具", "Darkfield感測器任意表面可用", "USB-C快充,滿電續航15天"],
+          "ksp": [
+            "MagSpeed電磁滾輪,速度與精準兼具",
+            "Darkfield感測器任意表面可用",
+            "USB-C快充,滿電續航15天"
+          ],
           "sell": "",
           "image": "https://img1.mydrivers.com/img/20220613/04170c7e-27f6-4687-b9dd-b4b53e6cbbed.jpg",
           "source_url": "https://www.logitech.com/en-us/shop/p/mx-master-3s",
@@ -441,7 +509,11 @@
             "颜色": "石墨黑/淺灰",
             "供电方式": "充電式(650mAh,約70天)"
           },
-          "ksp": ["雙模滾輪+觸覺回饋,操作更直覺", "新增Actions Ring手勢控制", "650mAh續航約70天"],
+          "ksp": [
+            "雙模滾輪+觸覺回饋,操作更直覺",
+            "新增Actions Ring手勢控制",
+            "650mAh續航約70天"
+          ],
           "sell": "",
           "image": "https://img1.mydrivers.com/img/20250930/0bd0f954-55ce-4a27-90c2-48d003afff0f.png",
           "source_url": "https://www.logitech.com/en-us/shop/p/mx-master-4",
@@ -463,7 +535,11 @@
             "颜色": "石墨黑/茱萸粉",
             "供电方式": "充電式(500mAh,約70天)"
           },
-          "ksp": ["輕巧便攜(99g),仍搭載MagSpeed滾輪", "任意表面可用的Darkfield感測器", "500mAh續航約70天"],
+          "ksp": [
+            "輕巧便攜(99g),仍搭載MagSpeed滾輪",
+            "任意表面可用的Darkfield感測器",
+            "500mAh續航約70天"
+          ],
           "sell": "",
           "image": "",
           "source_url": "https://www.logitech.com/en-us/shop/p/mx-anywhere-3s",
@@ -485,7 +561,11 @@
             "颜色": "黑色/白色",
             "供电方式": "充電式(800mAh,約80小時)"
           },
-          "ksp": ["三模連接(2.4G/藍牙/有線)", "PAW3395光學引擎,DPI達26000", "霍爾磁感應金屬滾輪,安靜耐用"],
+          "ksp": [
+            "三模連接(2.4G/藍牙/有線)",
+            "PAW3395光學引擎,DPI達26000",
+            "霍爾磁感應金屬滾輪,安靜耐用"
+          ],
           "sell": "",
           "image": "https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M6-Wireless-Mouse-Black.jpg?v=1762586831",
           "source_url": "https://www.keychron.com/products/keychron-m6-wireless-mouse",
@@ -507,7 +587,11 @@
             "颜色": "黑色/白色",
             "供电方式": "—"
           },
-          "ksp": ["動態電磁滾輪,自動切換齒感/平滑", "TOG全場景感測器,玻璃桌面可用", "三設備快速切換"],
+          "ksp": [
+            "動態電磁滾輪,自動切換齒感/平滑",
+            "TOG全場景感測器,玻璃桌面可用",
+            "三設備快速切換"
+          ],
           "sell": "",
           "image": "https://img1.mydrivers.com/img/20260701/0089150f70554e909256035077289ef1.png",
           "source_url": "https://www.ithome.com/0/973/353.htm",
@@ -529,7 +613,11 @@
             "颜色": "曜石黑/薄荷綠/蘭花紫/海洋藍/暖茶棕",
             "供电方式": "充電式(800mAh,約160小時)"
           },
-          "ksp": ["鋁合金霍爾磁感應滾輪,耐用度100萬次", "三模連接可切換5台裝置", "800mAh續航約160小時(2.4G)"],
+          "ksp": [
+            "鋁合金霍爾磁感應滾輪,耐用度100萬次",
+            "三模連接可切換5台裝置",
+            "800mAh續航約160小時(2.4G)"
+          ],
           "sell": "",
           "image": "",
           "source_url": "https://www.rapoo.cn/product/817",
@@ -566,7 +654,10 @@
             "价格备注": "MSRP¥149(C-C線版)/活動價¥129",
             "显示": "—"
           },
-          "ksp": ["小米120W秒充", "智能充電分配"],
+          "ksp": [
+            "小米120W秒充",
+            "智能充電分配"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -589,7 +680,10 @@
             "价格备注": "MSRP¥199/活動價¥189",
             "显示": "—"
           },
-          "ksp": ["四口快充", "多協議快充"],
+          "ksp": [
+            "四口快充",
+            "多協議快充"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -612,7 +706,10 @@
             "价格备注": "MSRP¥129(C-C線版)",
             "显示": "—"
           },
-          "ksp": ["四口快充", "自研溫控技術"],
+          "ksp": [
+            "四口快充",
+            "自研溫控技術"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -635,7 +732,10 @@
             "价格备注": "MSRP¥119(單體)/¥138(C-C線版)",
             "显示": "—"
           },
-          "ksp": ["百瓦PPS快充加持", "小米120W秒充"],
+          "ksp": [
+            "百瓦PPS快充加持",
+            "小米120W秒充"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -658,7 +758,10 @@
             "价格备注": "MSRP¥139(單體)/149(C-C線版)/活動價¥118(單體)/126(0.9m C-C)",
             "显示": "—"
           },
-          "ksp": ["三設備同充", "BCT智能控溫"],
+          "ksp": [
+            "三設備同充",
+            "BCT智能控溫"
+          ],
           "sell": "",
           "image": "https://oss.img.ninestarmall.com/UserFiles/Factories35/Images/20250709/E243A669508F4482871A436DB4FE298E.jpg",
           "source_url": "",
@@ -681,7 +784,11 @@
             "价格备注": "MSRP¥159(C-C線版)/活動價¥149",
             "显示": "—"
           },
-          "ksp": ["30分鐘充iPhone至60%", "智能溫控", "體積縮小34%"],
+          "ksp": [
+            "30分鐘充iPhone至60%",
+            "智能溫控",
+            "體積縮小34%"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -704,7 +811,10 @@
             "价格备注": "MSRP¥199(C-C線版)/活動價¥169",
             "显示": "—"
           },
-          "ksp": ["體積小/低溫快充", "三口多協議快充"],
+          "ksp": [
+            "體積小/低溫快充",
+            "三口多協議快充"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -727,7 +837,11 @@
             "价格备注": "MSRP¥329(單體)/369(0.9m C-C)/379(1.8m C-C)/活動價¥299(單體)/349/359",
             "显示": "—"
           },
-          "ksp": ["支持iPhone全系快充", "過溫保護", "三重防掉落"],
+          "ksp": [
+            "支持iPhone全系快充",
+            "過溫保護",
+            "三重防掉落"
+          ],
           "sell": "",
           "image": "https://cdn.shopify.com/s/files/1/0493/9834/9974/files/A2688141_Rich_image_TD01_US_2000x2000px_V1-removebg-preview.png?v=1737944482",
           "source_url": "",
@@ -750,7 +864,11 @@
             "价格备注": "MSRP¥199(C-C線版)",
             "显示": "—"
           },
-          "ksp": ["小米120W秒充", "配240W快充線", "體積縮小約23%"],
+          "ksp": [
+            "小米120W秒充",
+            "配240W快充線",
+            "體積縮小約23%"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -773,7 +891,11 @@
             "价格备注": "MSRP¥299",
             "显示": "—"
           },
-          "ksp": ["超大功率快速滿電", "多協議快充", "體積縮小25%"],
+          "ksp": [
+            "超大功率快速滿電",
+            "多協議快充",
+            "體積縮小25%"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -796,7 +918,11 @@
             "价格备注": "MSRP¥259/活動價¥239",
             "显示": "—"
           },
-          "ksp": ["功率溫控監測顯示", "自研功率動態分配技術", "三重溫控"],
+          "ksp": [
+            "功率溫控監測顯示",
+            "自研功率動態分配技術",
+            "三重溫控"
+          ],
           "sell": "",
           "image": "https://cdn.shopify.com/s/files/1/0493/9834/9974/files/B26971Z1_Rich_image_TD01_US_V1.png?v=1748578405&width=1600",
           "source_url": "",
@@ -819,7 +945,11 @@
             "价格备注": "MSRP¥179(單體)/189(C-C線版,同級最便宜)",
             "显示": "—"
           },
-          "ksp": ["PD3.1 140W大功率", "四口同充", "小米120W秒充"],
+          "ksp": [
+            "PD3.1 140W大功率",
+            "四口同充",
+            "小米120W秒充"
+          ],
           "sell": "",
           "image": "https://cuktech.com.cn/kuke/upload/2025-03-19/17423694991514028808395ac41fe4470195ad50a80f02ff.png",
           "source_url": "",
@@ -842,7 +972,11 @@
             "价格备注": "MSRP¥159",
             "显示": "—"
           },
-          "ksp": ["PD3.1協議", "低溫快充", "四口備快充/智能溫控"],
+          "ksp": [
+            "PD3.1協議",
+            "低溫快充",
+            "四口備快充/智能溫控"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -865,7 +999,11 @@
             "价格备注": "MSRP¥199(C-C線版)",
             "显示": "—"
           },
-          "ksp": ["PD3.1協議", "低溫快充", "配240W快充線"],
+          "ksp": [
+            "PD3.1協議",
+            "低溫快充",
+            "配240W快充線"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -888,7 +1026,11 @@
             "价格备注": "MSRP¥299/活動價¥279",
             "显示": "—"
           },
-          "ksp": ["140W全程滿載", "APPLE原生PI芯片", "雙口PD3.1/UFCS"],
+          "ksp": [
+            "140W全程滿載",
+            "APPLE原生PI芯片",
+            "雙口PD3.1/UFCS"
+          ],
           "sell": "",
           "image": "",
           "source_url": "",
@@ -911,7 +1053,11 @@
             "价格备注": "¥249",
             "显示": "雙視窗螢幕,顯示各埠即時功率分配"
           },
-          "ksp": ["雙視窗顯示各埠即時功率", "2C1A三埠100W快充", "體積小巧(69×55×34mm)"],
+          "ksp": [
+            "雙視窗顯示各埠即時功率",
+            "2C1A三埠100W快充",
+            "體積小巧(69×55×34mm)"
+          ],
           "sell": "",
           "image": "https://q4.itc.cn/images01/20250609/bd8c51001d36454eb19ea7ca0edb1bb6.png",
           "source_url": "https://finance.sina.com.cn/tech/digi/2025-05-17/doc-inewwatx7474862.shtml",
@@ -934,7 +1080,11 @@
             "价格备注": "¥699",
             "显示": "1.3吋彩色觸控螢幕,顯示總功率/各埠輸出/線材規格/溫度,搭配App分配功率"
           },
-          "ksp": ["1.3吋觸控彩色螢幕", "App可自訂各埠功率分配", "單埠峰值150W/總功率160W"],
+          "ksp": [
+            "1.3吋觸控彩色螢幕",
+            "App可自訂各埠功率分配",
+            "單埠峰值150W/總功率160W"
+          ],
           "sell": "",
           "image": "https://nimg.ws.126.net/?url=http%3A%2F%2Fdingyue.ws.126.net%2F2026%2F0615%2Fb9fde93aj00tgo6j60041d000xc018gg.jpg&thumbnail=660x2147483647&quality=80&type=jpg",
           "source_url": "https://www.ithome.com/0/910/319.htm",
@@ -957,7 +1107,11 @@
             "价格备注": "¥219(含6A/240W快充線組合價)",
             "显示": "1.57吋TFT彩色螢幕(200×320px,700nit)+米家App"
           },
-          "ksp": ["1.57吋高亮彩色螢幕", "米家App監控電壓/電流", "含240W快充線組合價超值"],
+          "ksp": [
+            "1.57吋高亮彩色螢幕",
+            "米家App監控電壓/電流",
+            "含240W快充線組合價超值"
+          ],
           "sell": "",
           "image": "https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc5/Cuktech-10-Ultra-1.jpg",
           "source_url": "https://zhongce.sina.com.cn/iframe/article/view/191093/",
@@ -980,7 +1134,11 @@
             "价格备注": "官方定價未確認,待人工查證",
             "显示": "可旋轉高亮螢幕,顯示功率/電壓/電流/協議/溫度"
           },
-          "ksp": ["可旋轉螢幕顯示即時電壓電流", "單口45W輕巧便攜", "顯示協議與溫度資訊"],
+          "ksp": [
+            "可旋轉螢幕顯示即時電壓電流",
+            "單口45W輕巧便攜",
+            "顯示協議與溫度資訊"
+          ],
           "sell": "",
           "image": "",
           "source_url": "https://www.lulian.cn/product/1661.html",
@@ -1003,7 +1161,11 @@
             "价格备注": "¥279,另有¥259的價格來源衝突,建議之後核實",
             "显示": "LCD顯示總功率/各埠分配/協議/溫度,觸控切換畫面"
           },
-          "ksp": ["4C1A五埠大功率160W", "LCD觸控切換顯示畫面", "各埠功率即時分配"],
+          "ksp": [
+            "4C1A五埠大功率160W",
+            "LCD觸控切換顯示畫面",
+            "各埠功率即時分配"
+          ],
           "sell": "",
           "image": "",
           "source_url": "https://www.chongdiantou.com/archives/1765444464777.html",
@@ -1026,7 +1188,11 @@
             "价格备注": "¥189",
             "显示": "彩色螢幕顯示功率/溫度,充電結束顯示時間與峰值功率"
           },
-          "ksp": ["彩色螢幕顯示功率/溫度", "充電結束自動回顧用電紀錄", "2C1A三埠100W"],
+          "ksp": [
+            "彩色螢幕顯示功率/溫度",
+            "充電結束自動回顧用電紀錄",
+            "2C1A三埠100W"
+          ],
           "sell": "",
           "image": "https://www.baseus.com/cdn/shop/files/Baseus_PicoGo_AE21_Fast_Charger_2C_U_100W_1_1200x.jpg?v=1761289660",
           "source_url": "https://finance.sina.com.cn/tech/digi/2025-09-26/doc-infrvwzh0403867.shtml",
@@ -1049,7 +1215,11 @@
             "价格备注": "¥239(常態價¥269)",
             "显示": "彩色TFT顯示功率/時間/溫度,UV硬化螢幕表面"
           },
-          "ksp": ["彩色TFT顯示功率/時間/溫度", "四埠(3C1A)140W大功率", "UV硬化耐磨螢幕"],
+          "ksp": [
+            "彩色TFT顯示功率/時間/溫度",
+            "四埠(3C1A)140W大功率",
+            "UV硬化耐磨螢幕"
+          ],
           "sell": "",
           "image": "",
           "source_url": "https://www.ithome.com/0/890/757.htm",
@@ -1072,7 +1242,11 @@
             "价格备注": "MSRP¥338/促銷¥227.8",
             "显示": "圓形彩色螢幕,顯示表情/裝置類型/協議"
           },
-          "ksp": ["圓形彩色螢幕顯示裝置類型", "支援AVS可調電壓協議", "三色可選,造型可愛"],
+          "ksp": [
+            "圓形彩色螢幕顯示裝置類型",
+            "支援AVS可調電壓協議",
+            "三色可選,造型可愛"
+          ],
           "sell": "",
           "image": "https://n.sinaimg.cn/spider20260509/544/w1080h1064/20260509/0c1b-e1f79b0113e701c8f683b79c893f49cf.jpg",
           "source_url": "https://www.ithome.com/0/950/463.htm",
