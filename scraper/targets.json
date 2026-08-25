@@ -163,7 +163,6 @@
     "_note": "資料來源為內部品牌SPEC比較表(100W/140W無螢幕氮化鎵)，非公開網頁，故 url 留空、皆為 manual",
     "items": [
       { "brand": "Adol", "model": "AC100-050A(2025版)", "site": "manual", "url": "" },
-      { "brand": "Adol", "model": "AC100", "site": "manual", "url": "" },
       { "brand": "綠聯 UGREEN", "model": "X564", "site": "manual", "url": "" },
       { "brand": "酷態科 CUKTECH", "model": "AD1003", "site": "manual", "url": "" },
       { "brand": "倍思 Baseus", "model": "CCXFK100CC", "site": "manual", "url": "" },
@@ -171,7 +170,6 @@
       { "brand": "綠聯 UGREEN", "model": "X757", "site": "manual", "url": "" },
       { "brand": "安克 Anker", "model": "A2688(智显充Prime系列)", "site": "manual", "url": "" },
       { "brand": "Adol", "model": "AC140-020A(2025版)", "site": "manual", "url": "" },
-      { "brand": "Adol", "model": "AC140", "site": "manual", "url": "" },
       { "brand": "安克 Anker", "model": "B2697", "site": "manual", "url": "" },
       { "brand": "酷態科 CUKTECH", "model": "AD1404U", "site": "manual", "url": "" },
       { "brand": "綠聯 UGREEN", "model": "X569", "site": "manual", "url": "" },

@@ -55,17 +55,18 @@
   .price{font-size:20px;font-weight:800;color:var(--accent2)}
   .price .cur{font-size:12px;color:var(--muted);font-weight:600;margin-right:2px}
   .price.none{color:var(--muted);font-size:14px;font-weight:600}
-  .meta{font-size:12.5px;color:var(--muted)}
+  .meta{font-size:12.5px;color:var(--muted);overflow-wrap:anywhere}
   .meta b{color:var(--txt);font-weight:600}
-  .specs{font-size:12.5px;color:#334155;border-top:1px solid var(--line);padding-top:8px}
-  .specs .specline{display:flex;gap:8px;margin:3px 0}
+  .specs{font-size:12.5px;color:#334155;border-top:1px solid var(--line);padding-top:8px;min-width:0}
+  .specs .specline{display:flex;gap:8px;margin:3px 0;min-width:0}
   .specs .sk{color:var(--muted);flex:0 0 68px}
-  .specs .sv{color:#334155;flex:1}
-  .ksp{font-size:12.5px;color:#334155;border-top:1px solid var(--line);padding-top:8px}
+  .specs .sv{color:#334155;flex:1;min-width:0;overflow-wrap:anywhere;word-break:break-word}
+  .ksp{font-size:12.5px;color:#334155;border-top:1px solid var(--line);padding-top:8px;min-width:0}
   .ksp b{color:var(--accent);font-weight:700;font-size:11.5px;letter-spacing:.03em}
   .ksp ul{margin:4px 0 0;padding-left:18px}
-  .ksp li{margin:2px 0}
-  .sell{font-size:12.5px;color:#b45309}
+  .ksp li{margin:2px 0;overflow-wrap:anywhere;word-break:break-word}
+  .sell{font-size:12.5px;color:#b45309;overflow-wrap:anywhere}
+  .model{overflow-wrap:anywhere}
   .card-badges{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
   .badge-year{font-size:11px;padding:2px 8px;background:var(--panel2);border:1px solid var(--line);border-radius:999px;color:var(--muted)}
   .badge-rating{font-size:12.5px;color:#f59e0b;font-weight:700}

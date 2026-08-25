@@ -342,7 +342,7 @@
           "source_url": "https://detail.zol.com.cn/2112/2111827/param.shtml",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2024"
         },
         {
           "brand": "雷柏 Rapoo",
@@ -623,7 +623,7 @@
           "source_url": "https://www.rapoo.cn/product/817",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2024"
         }
       ]
     },
@@ -663,33 +663,7 @@
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
-        },
-        {
-          "brand": "Adol",
-          "model": "AC100",
-          "price": 189,
-          "size": "75×61×29 mm",
-          "weight": "211 g",
-          "specs_detail": {
-            "类型": "氮化鎵",
-            "功率": "100W",
-            "接口": "3-Port(2C1A)",
-            "协议支持": "PD3.1/QC/FCP/SCP",
-            "功率密度": "0.75W/cm³(132.68cm³)",
-            "价格备注": "MSRP¥199/活動價¥189",
-            "显示": "—"
-          },
-          "ksp": [
-            "四口快充",
-            "多協議快充"
-          ],
-          "sell": "",
-          "image": "",
-          "source_url": "",
-          "rating": null,
-          "reviews": null,
-          "launched": null
+          "launched": "2025"
         },
         {
           "brand": "綠聯 UGREEN",
@@ -715,7 +689,7 @@
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2024"
         },
         {
           "brand": "酷態科 CUKTECH",
@@ -737,7 +711,7 @@
             "小米120W秒充"
           ],
           "sell": "",
-          "image": "",
+          "image": "https://cuktech.com.cn/kuke/upload/2025-07-21/17530862422024028808397a2063968501982c152d9a0781.png",
           "source_url": "",
           "rating": null,
           "reviews": null,
@@ -790,11 +764,11 @@
             "體積縮小34%"
           ],
           "sell": "",
-          "image": "",
+          "image": "https://chillpoint-digital.com/cdn/shop/products/WhatsAppImage2022-07-29at12.07.22PM_300x300.jpg?v=1659514238",
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2022"
         },
         {
           "brand": "綠聯 UGREEN",
@@ -820,7 +794,7 @@
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2024"
         },
         {
           "brand": "安克 Anker",
@@ -847,7 +821,7 @@
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2024"
         },
         {
           "brand": "Adol",
@@ -870,38 +844,11 @@
             "體積縮小約23%"
           ],
           "sell": "",
-          "image": "",
+          "image": "https://www.chargerlab.com/wp-content/uploads/2025/12/2025120909301571.jpg",
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
-        },
-        {
-          "brand": "Adol",
-          "model": "AC140",
-          "price": 299,
-          "size": "73×29×73 mm",
-          "weight": "295 g",
-          "specs_detail": {
-            "类型": "氮化鎵",
-            "功率": "140W",
-            "接口": "3-Port(2C1A)",
-            "协议支持": "PD3.1/QC/FCP/SCP",
-            "功率密度": "0.91W/cm³(154.54cm³)",
-            "价格备注": "MSRP¥299",
-            "显示": "—"
-          },
-          "ksp": [
-            "超大功率快速滿電",
-            "多協議快充",
-            "體積縮小25%"
-          ],
-          "sell": "",
-          "image": "",
-          "source_url": "",
-          "rating": null,
-          "reviews": null,
-          "launched": null
+          "launched": "2025"
         },
         {
           "brand": "安克 Anker",
@@ -928,7 +875,7 @@
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2024"
         },
         {
           "brand": "酷態科 CUKTECH",
@@ -955,7 +902,7 @@
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2024"
         },
         {
           "brand": "綠聯 UGREEN",
@@ -982,7 +929,7 @@
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2026"
         },
         {
           "brand": "綠聯 UGREEN",
@@ -1009,7 +956,7 @@
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2022"
         },
         {
           "brand": "奧海 AOHI",
@@ -1032,11 +979,11 @@
             "雙口PD3.1/UFCS"
           ],
           "sell": "",
-          "image": "",
+          "image": "https://www.chargerlab.com/wp-content/uploads/2023/06/2023061210282428.jpeg",
           "source_url": "",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2023"
         },
         {
           "brand": "安克 Anker",
@@ -1063,7 +1010,7 @@
           "source_url": "https://finance.sina.com.cn/tech/digi/2025-05-17/doc-inewwatx7474862.shtml",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2025"
         },
         {
           "brand": "安克 Anker",
@@ -1090,7 +1037,7 @@
           "source_url": "https://www.ithome.com/0/910/319.htm",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2026"
         },
         {
           "brand": "酷態科 CUKTECH",
@@ -1117,7 +1064,7 @@
           "source_url": "https://zhongce.sina.com.cn/iframe/article/view/191093/",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2025"
         },
         {
           "brand": "綠聯 UGREEN",
@@ -1144,7 +1091,7 @@
           "source_url": "https://www.lulian.cn/product/1661.html",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2026"
         },
         {
           "brand": "綠聯 UGREEN",
@@ -1171,7 +1118,7 @@
           "source_url": "https://www.chongdiantou.com/archives/1765444464777.html",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2025"
         },
         {
           "brand": "倍思 Baseus",
@@ -1221,11 +1168,11 @@
             "UV硬化耐磨螢幕"
           ],
           "sell": "",
-          "image": "",
+          "image": "https://www.chargerlab.com/wp-content/uploads/2025/12/2025122308020997.jpg",
           "source_url": "https://www.ithome.com/0/890/757.htm",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2025"
         },
         {
           "brand": "圖拉斯 THULOS",
@@ -1252,7 +1199,7 @@
           "source_url": "https://www.ithome.com/0/950/463.htm",
           "rating": null,
           "reviews": null,
-          "launched": null
+          "launched": "2026"
         }
       ]
     }
