@@ -36,9 +36,24 @@
   select{background:var(--panel);color:var(--txt);border:1px solid var(--line);
     border-radius:8px;padding:7px 10px;font-size:13px}
   label.sortlbl{color:var(--muted);font-size:12.5px;margin-right:-4px}
-  /* 品牌篩選 */
-  .brandbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 18px}
-  .brandbar .lbl{color:var(--muted);font-size:12.5px;margin-right:2px}
+  /* 篩選(下拉勾選,水平並排) */
+  .filters-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:0 0 18px}
+  .fgroup{display:flex;align-items:center;gap:6px}
+  .fgroup .lbl{color:var(--muted);font-size:12.5px;flex-shrink:0}
+  .msel{position:relative;display:inline-block}
+  .msel-btn{background:var(--panel);color:var(--txt);border:1px solid var(--line);
+    border-radius:8px;padding:6px 10px;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap}
+  .msel-btn:hover{border-color:var(--accent)}
+  .msel-btn.active{border-color:var(--accent);color:var(--accent);font-weight:600}
+  .msel-caret{font-size:9px;color:var(--muted)}
+  .msel-panel{position:absolute;top:calc(100% + 4px);left:0;z-index:30;background:var(--panel);
+    border:1px solid var(--line);border-radius:10px;padding:6px;min-width:150px;max-height:260px;
+    overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.14);display:none}
+  .msel-panel.open{display:block}
+  .msel-opt{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:6px;
+    font-size:13px;cursor:pointer;white-space:nowrap;color:var(--txt)}
+  .msel-opt:hover{background:var(--panel2)}
+  .msel-opt input{cursor:pointer;accent-color:var(--accent)}
   .chip{background:var(--panel);border:1px solid var(--line);color:var(--muted);
     padding:5px 13px;border-radius:999px;font-size:12.5px;cursor:pointer;line-height:1.4}
   .chip:hover{border-color:var(--accent)}
@@ -72,9 +87,6 @@
   .badge-rating{font-size:12.5px;color:#f59e0b;font-weight:700}
   .badge-reviews{font-size:11.5px;color:var(--muted)}
   .card a.src{font-size:12px;color:var(--accent);text-decoration:none;margin-top:auto}
-  /* filterbar */
-  .filterbar{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:0 0 10px}
-  .filterbar .lbl{color:var(--muted);font-size:12px;flex-shrink:0;margin-right:2px}
   /* scatter sub-nav */
   .scatter-nav{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
   .scatter-nav button{background:var(--panel);border:1px solid var(--line);color:var(--muted);
@@ -189,11 +201,13 @@
     </div>
   </div>
 
-  <div class="brandbar" id="brandbar"></div>
-  <div class="filterbar" id="priceFilterBar"></div>
-  <div class="filterbar" id="connFilterBar"></div>
-  <div class="filterbar" id="typeFilterBar"></div>
-  <div class="filterbar" id="wattFilterBar"></div>
+  <div class="filters-row" id="filtersRow">
+    <div class="fgroup" id="brandGroup"></div>
+    <div class="fgroup" id="priceGroup"></div>
+    <div class="fgroup" id="connGroup"></div>
+    <div class="fgroup" id="typeGroup"></div>
+    <div class="fgroup" id="wattGroup"></div>
+  </div>
 
   <div id="content"></div>
 
@@ -222,11 +236,53 @@ const FALLBACK = {
 };
 
 let DATA = null, curCat = null, curView = "cards", curSort = "default";
-let curBrands = new Set();   // 空 = 全部品牌
-let curPriceBucket = 0;      // 0=全部
-let curConnMode = null;      // null=全部
-let curChargerType = null;   // null=全部(僅氮化鎵充電器分類使用)
-let curWattBucket = 0;       // 0=全部(僅氮化鎵充電器分類使用)
+let curBrands = new Set();       // 空集合 = 全部品牌
+let curPriceBuckets = new Set(); // 空集合 = 全部價位(元素為 PRICE_BUCKETS 索引,1起,不含0號的「全部」)
+let curConnModes = new Set();    // 空集合 = 全部連線模式
+let curChargerTypes = new Set(); // 空集合 = 全部類型(僅氮化鎵充電器分類使用)
+let curWattBuckets = new Set();  // 空集合 = 全部瓦數(僅氮化鎵充電器分類使用,元素為 WATT_BUCKETS 索引)
+let openMsel = null;             // 目前展開的下拉勾選面板(用於點外部收合)
+document.addEventListener('click', e=>{
+  if(openMsel && !openMsel.contains(e.target)){ closeAllMsel(); }
+});
+function closeAllMsel(){
+  document.querySelectorAll('.msel-panel.open').forEach(p=>p.classList.remove('open'));
+  openMsel = null;
+}
+// 建立一個「下拉勾選(多選)」元件:options=[{value,label}],selectedSet 為外部維護的 Set,onChange(newSet)=>{}
+function buildMultiSelect(container, allLabel, options, selectedSet, onChange){
+  container.innerHTML='';
+  const wrap=document.createElement('div'); wrap.className='msel';
+  const btn=document.createElement('button'); btn.type='button'; btn.className='msel-btn';
+  const panel=document.createElement('div'); panel.className='msel-panel';
+  const updateBtnText=()=>{
+    btn.classList.toggle('active', selectedSet.size>0);
+    const text = selectedSet.size===0 ? allLabel
+      : selectedSet.size===1 ? options.find(o=>selectedSet.has(o.value))?.label
+      : `已選 ${selectedSet.size} 項`;
+    btn.innerHTML = `<span>${text}</span><span class="msel-caret">▾</span>`;
+  };
+  options.forEach(opt=>{
+    const row=document.createElement('label'); row.className='msel-opt';
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=selectedSet.has(opt.value);
+    cb.onchange=()=>{
+      cb.checked ? selectedSet.add(opt.value) : selectedSet.delete(opt.value);
+      updateBtnText(); onChange();
+    };
+    const txt=document.createElement('span'); txt.textContent=opt.label;
+    row.appendChild(cb); row.appendChild(txt);
+    panel.appendChild(row);
+  });
+  btn.onclick=(e)=>{
+    e.stopPropagation();
+    const willOpen = !panel.classList.contains('open');
+    closeAllMsel();
+    if(willOpen){ panel.classList.add('open'); openMsel=wrap; }
+  };
+  updateBtnText();
+  wrap.appendChild(btn); wrap.appendChild(panel);
+  container.appendChild(wrap);
+}
 let curScatterType = 'ab';   // 'ab'=DPI/電池×價格, 'quad'=象限圖, 'wb'=重量×電池
 
 const $ = s => document.querySelector(s);
@@ -266,8 +322,8 @@ function buildCatSeg(){
     const btn=document.createElement('button');
     btn.textContent=c.label; btn.dataset.cat=k;
     if(k===curCat) btn.classList.add('active');
-    btn.onclick=()=>{curCat=k;curBrands.clear();curPriceBucket=0;curConnMode=null;
-      curChargerType=null;curWattBucket=0;
+    btn.onclick=()=>{curCat=k;curBrands.clear();curPriceBuckets.clear();curConnModes.clear();
+      curChargerTypes.clear();curWattBuckets.clear();closeAllMsel();
       [...seg.children].forEach(x=>x.classList.toggle('active',x.dataset.cat===k));
       const all=DATA.categories[k].items;
       buildBrandFilter();buildPriceFilter(all);buildConnFilter(all);
@@ -277,18 +333,12 @@ function buildCatSeg(){
 }
 
 function buildBrandFilter(){
-  const bar=$('#brandbar'); bar.innerHTML='';
+  const g=$('#brandGroup'); g.innerHTML='';
   const brands=[...new Set(DATA.categories[curCat].items.map(i=>i.brand))];
-  const lbl=document.createElement('span'); lbl.className='lbl'; lbl.textContent='品牌'; bar.appendChild(lbl);
-  const mk=(text,active,on)=>{const c=document.createElement('span');c.className='chip'+(active?' on':'');c.textContent=text;c.onclick=on;return c;};
-  // 全部
-  bar.appendChild(mk('全部', curBrands.size===0, ()=>{curBrands.clear(); buildBrandFilter(); render();}));
-  brands.forEach(b=>{
-    bar.appendChild(mk(b, curBrands.has(b), ()=>{
-      curBrands.has(b)?curBrands.delete(b):curBrands.add(b);
-      buildBrandFilter(); render();
-    }));
-  });
+  const lbl=document.createElement('span'); lbl.className='lbl'; lbl.textContent='品牌';
+  g.appendChild(lbl);
+  const holder=document.createElement('span'); g.appendChild(holder);
+  buildMultiSelect(holder, '全部品牌', brands.map(b=>({value:b,label:b})), curBrands, render);
 }
 function bindControls(){
   $('#viewSeg').querySelectorAll('button').forEach(b=>{
@@ -341,39 +391,35 @@ const PRICE_BUCKETS=[
   {label:'¥500+',   test:p=>p>=500},
 ];
 function buildPriceFilter(allItems){
-  const bar=$('#priceFilterBar'); bar.innerHTML='';
+  const g=$('#priceGroup'); g.innerHTML='';
   const prices=allItems.map(i=>Number(i.price)).filter(p=>p>0);
-  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='價位';bar.appendChild(lbl);
-  PRICE_BUCKETS.forEach((b,idx)=>{
-    if(idx>0&&!prices.some(p=>b.test(p))) return;
-    const c=document.createElement('span');
-    c.className='chip'+(curPriceBucket===idx?' on':'');
-    c.textContent=b.label;
-    c.onclick=()=>{curPriceBucket=idx;buildPriceFilter(allItems);render();};
-    bar.appendChild(c);
-  });
+  const opts=PRICE_BUCKETS.map((b,idx)=>({idx,b})).filter(({idx,b})=>idx>0&&prices.some(p=>b.test(p)));
+  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='價位';
+  g.appendChild(lbl);
+  const holder=document.createElement('span'); g.appendChild(holder);
+  buildMultiSelect(holder, '全部價位', opts.map(({idx,b})=>({value:idx,label:b.label})), curPriceBuckets, render);
 }
 function buildConnFilter(allItems){
-  const bar=$('#connFilterBar');bar.innerHTML='';
+  const g=$('#connGroup'); g.innerHTML='';
   const modes=[...new Set(allItems.map(parseConnMode).filter(Boolean))].sort();
-  if(modes.length<=1){bar.style.display='none';return;}bar.style.display='';
-  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='連線';bar.appendChild(lbl);
-  const mk=(text,active,fn)=>{const c=document.createElement('span');c.className='chip'+(active?' on':'');c.textContent=text;c.onclick=fn;return c;};
-  bar.appendChild(mk('全部',!curConnMode,()=>{curConnMode=null;buildConnFilter(allItems);render();}));
-  modes.forEach(m=>bar.appendChild(mk(m,curConnMode===m,()=>{curConnMode=m;buildConnFilter(allItems);render();})));
+  if(modes.length<=1){g.style.display='none';return;} g.style.display='';
+  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='連線';
+  g.appendChild(lbl);
+  const holder=document.createElement('span'); g.appendChild(holder);
+  buildMultiSelect(holder, '全部連線', modes.map(m=>({value:m,label:m})), curConnModes, render);
 }
 function parseWeight(w){ const m=String(w).match(/([\d.]+)\s*g/); return m?parseFloat(m[1]):Infinity; }
 
 function buildTypeFilter(allItems){
-  const bar=$('#typeFilterBar'); bar.innerHTML='';
-  if(curCat!=='charger'){bar.style.display='none';return;}
+  const g=$('#typeGroup'); g.innerHTML='';
+  if(curCat!=='charger'){g.style.display='none';return;}
   const types=[...new Set(allItems.map(i=>(i.specs_detail||{})['类型']).filter(Boolean))];
-  if(types.length<=1){bar.style.display='none';return;}
-  bar.style.display='';
-  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='類型';bar.appendChild(lbl);
-  const mk=(text,active,fn)=>{const c=document.createElement('span');c.className='chip'+(active?' on':'');c.textContent=text;c.onclick=fn;return c;};
-  bar.appendChild(mk('全部',!curChargerType,()=>{curChargerType=null;buildTypeFilter(allItems);render();}));
-  types.forEach(t=>bar.appendChild(mk(t,curChargerType===t,()=>{curChargerType=t;buildTypeFilter(allItems);render();})));
+  if(types.length<=1){g.style.display='none';return;}
+  g.style.display='';
+  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='類型';
+  g.appendChild(lbl);
+  const holder=document.createElement('span'); g.appendChild(holder);
+  buildMultiSelect(holder, '全部類型', types.map(t=>({value:t,label:t})), curChargerTypes, render);
 }
 function parseWatt(s){ const m=String(s).match(/(\d+)\s*W/i); return m?parseInt(m[1]):null; }
 const WATT_BUCKETS=[
@@ -384,20 +430,16 @@ const WATT_BUCKETS=[
   {label:'140W+',   test:w=>w>=140},
 ];
 function buildWattFilter(allItems){
-  const bar=$('#wattFilterBar'); bar.innerHTML='';
-  if(curCat!=='charger'){bar.style.display='none';return;}
+  const g=$('#wattGroup'); g.innerHTML='';
+  if(curCat!=='charger'){g.style.display='none';return;}
   const watts=allItems.map(i=>parseWatt((i.specs_detail||{})['功率'])).filter(w=>w!==null);
-  if(!watts.length){bar.style.display='none';return;}
-  bar.style.display='';
-  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='瓦數';bar.appendChild(lbl);
-  WATT_BUCKETS.forEach((b,idx)=>{
-    if(idx>0&&!watts.some(w=>b.test(w))) return;
-    const c=document.createElement('span');
-    c.className='chip'+(curWattBucket===idx?' on':'');
-    c.textContent=b.label;
-    c.onclick=()=>{curWattBucket=idx;buildWattFilter(allItems);render();};
-    bar.appendChild(c);
-  });
+  if(!watts.length){g.style.display='none';return;}
+  g.style.display='';
+  const opts=WATT_BUCKETS.map((b,idx)=>({idx,b})).filter(({idx,b})=>idx>0&&watts.some(w=>b.test(w)));
+  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='瓦數';
+  g.appendChild(lbl);
+  const holder=document.createElement('span'); g.appendChild(holder);
+  buildMultiSelect(holder, '全部瓦數', opts.map(({idx,b})=>({value:idx,label:b.label})), curWattBuckets, render);
 }
 function sortItems(items){
   const a=[...items];
@@ -432,11 +474,11 @@ function render(){
   const cat=DATA.categories[curCat];
   let items=cat.items;
   if(curBrands.size) items=items.filter(i=>curBrands.has(i.brand));
-  if(curPriceBucket>0) items=items.filter(i=>{const p=Number(i.price);return p>0&&PRICE_BUCKETS[curPriceBucket].test(p);});
-  if(curConnMode) items=items.filter(i=>parseConnMode(i)===curConnMode);
+  if(curPriceBuckets.size) items=items.filter(i=>{const p=Number(i.price);return p>0&&[...curPriceBuckets].some(idx=>PRICE_BUCKETS[idx].test(p));});
+  if(curConnModes.size) items=items.filter(i=>curConnModes.has(parseConnMode(i)));
   if(curCat==='charger'){
-    if(curChargerType) items=items.filter(i=>(i.specs_detail||{})['类型']===curChargerType);
-    if(curWattBucket>0) items=items.filter(i=>{const w=parseWatt((i.specs_detail||{})['功率']);return w!==null&&WATT_BUCKETS[curWattBucket].test(w);});
+    if(curChargerTypes.size) items=items.filter(i=>curChargerTypes.has((i.specs_detail||{})['类型']));
+    if(curWattBuckets.size) items=items.filter(i=>{const w=parseWatt((i.specs_detail||{})['功率']);return w!==null&&[...curWattBuckets].some(idx=>WATT_BUCKETS[idx].test(w));});
   }
   items=sortItems(items);
   renderKPI(items, DATA.currency);
@@ -465,7 +507,7 @@ function viewCards(items, cur, fields){
     const detail=specLines(i.specs_detail, fields);
     return `
     <div class="card">
-      <div class="thumb">${i.image?`<img src="${i.image}" alt="">`:'🖱️'}</div>
+      <div class="thumb">${i.image?`<img src="${i.image}" alt="">`:''}</div>
       <div>
         <div class="brand">${i.brand||''}</div>
         <div class="model">${i.model||''}</div>
