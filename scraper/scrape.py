@@ -348,8 +348,12 @@ def main() -> int:
 
             items_out.append(row)
 
+        old_cat_meta = (old_data.get("categories") or {}).get(cat_key) or {}
+        type_field = cat.get("type_field") or old_cat_meta.get("type_field")
+
         out["categories"][cat_key] = {
             "label": cat.get("label", cat_key),
+            **({"type_field": type_field} if type_field else {}),
             "spec_fields": spec_fields_of(cat_key, old_data),
             "items": items_out,
         }

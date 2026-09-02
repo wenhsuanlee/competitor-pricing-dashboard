@@ -77,6 +77,7 @@
   },
   "mouse": {
     "label": "滑鼠",
+    "type_field": "產品類別",
     "items": [
       {
         "brand": "英菲克 INPHIC",
@@ -155,6 +156,7 @@
   },
   "charger": {
     "label": "氮化鎵充電器",
+    "type_field": "類型",
     "_note": "資料來源為內部品牌SPEC比較表(100W/140W無螢幕氮化鎵)，非公開網頁，故 url 留空、皆為 manual",
     "items": [
       { "brand": "Adol", "model": "AC100-050A(2025版)", "site": "manual", "url": "" },
