@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01",
+  "updated_at": "2026-09-02",
   "currency": "CNY",
   "draft": true,
   "categories": {
@@ -278,7 +278,6 @@
     },
     "mouse": {
       "label": "滑鼠",
-      "type_field": "產品類別",
       "spec_fields": [
         "產品類別",
         "連接方式",
@@ -643,7 +642,6 @@
     },
     "charger": {
       "label": "氮化鎵充電器",
-      "type_field": "類型",
       "spec_fields": [
         "類型",
         "功率",
