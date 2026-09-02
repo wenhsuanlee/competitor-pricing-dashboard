@@ -76,7 +76,7 @@
     ]
   },
   "mouse": {
-    "label": "垂直滑鼠",
+    "label": "滑鼠",
     "items": [
       {
         "brand": "英菲克 INPHIC",
@@ -113,12 +113,7 @@
         "model": "M618mini",
         "site": "manual",
         "url": "https://detail.zol.com.cn/1265/1264057/param.shtml"
-      }
-    ]
-  },
-  "wheel": {
-    "label": "磁滾輪滑鼠",
-    "items": [
+      },
       {
         "brand": "羅技 Logitech",
         "model": "MX Master 3S",

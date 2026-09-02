@@ -239,7 +239,7 @@ let DATA = null, curCat = null, curView = "cards", curSort = "default";
 let curBrands = new Set();       // 空集合 = 全部品牌
 let curPriceBuckets = new Set(); // 空集合 = 全部價位(元素為 PRICE_BUCKETS 索引,1起,不含0號的「全部」)
 let curConnModes = new Set();    // 空集合 = 全部連線模式
-let curChargerTypes = new Set(); // 空集合 = 全部類型(僅氮化鎵充電器分類使用)
+let curTypeFilters = new Set(); // 空集合 = 全部(依 cat.type_field 指定的欄位做多選篩選,如滑鼠的「產品類別」、充電器的「類型」)
 let curWattBuckets = new Set();  // 空集合 = 全部瓦數(僅氮化鎵充電器分類使用,元素為 WATT_BUCKETS 索引)
 let openMsel = null;             // 目前展開的下拉勾選面板(用於點外部收合)
 document.addEventListener('click', e=>{
@@ -323,7 +323,7 @@ function buildCatSeg(){
     btn.textContent=c.label; btn.dataset.cat=k;
     if(k===curCat) btn.classList.add('active');
     btn.onclick=()=>{curCat=k;curBrands.clear();curPriceBuckets.clear();curConnModes.clear();
-      curChargerTypes.clear();curWattBuckets.clear();closeAllMsel();
+      curTypeFilters.clear();curWattBuckets.clear();closeAllMsel();
       [...seg.children].forEach(x=>x.classList.toggle('active',x.dataset.cat===k));
       const all=DATA.categories[k].items;
       buildBrandFilter();buildPriceFilter(all);buildConnFilter(all);
@@ -412,14 +412,15 @@ function parseWeight(w){ const m=String(w).match(/([\d.]+)\s*g/); return m?parse
 
 function buildTypeFilter(allItems){
   const g=$('#typeGroup'); g.innerHTML='';
-  if(curCat!=='charger'){g.style.display='none';return;}
-  const types=[...new Set(allItems.map(i=>(i.specs_detail||{})['類型']).filter(Boolean))];
+  const typeField=DATA.categories[curCat].type_field;
+  if(!typeField){g.style.display='none';return;}
+  const types=[...new Set(allItems.map(i=>(i.specs_detail||{})[typeField]).filter(Boolean))];
   if(types.length<=1){g.style.display='none';return;}
   g.style.display='';
-  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='類型';
+  const lbl=document.createElement('span');lbl.className='lbl';lbl.textContent=typeField;
   g.appendChild(lbl);
   const holder=document.createElement('span'); g.appendChild(holder);
-  buildMultiSelect(holder, '全部類型', types.map(t=>({value:t,label:t})), curChargerTypes, render);
+  buildMultiSelect(holder, '全部'+typeField, types.map(t=>({value:t,label:t})), curTypeFilters, render);
 }
 function parseWatt(s){ const m=String(s).match(/(\d+)\s*W/i); return m?parseInt(m[1]):null; }
 const WATT_BUCKETS=[
@@ -477,8 +478,8 @@ function render(){
   if(curBrands.size) items=items.filter(i=>curBrands.has(i.brand));
   if(curPriceBuckets.size) items=items.filter(i=>{const p=Number(i.price);return p>0&&[...curPriceBuckets].some(idx=>PRICE_BUCKETS[idx].test(p));});
   if(curConnModes.size) items=items.filter(i=>curConnModes.has(parseConnMode(i)));
+  if(cat.type_field && curTypeFilters.size) items=items.filter(i=>curTypeFilters.has((i.specs_detail||{})[cat.type_field]));
   if(curCat==='charger'){
-    if(curChargerTypes.size) items=items.filter(i=>curChargerTypes.has((i.specs_detail||{})['類型']));
     if(curWattBuckets.size) items=items.filter(i=>{const w=parseWatt((i.specs_detail||{})['功率']);return w!==null&&[...curWattBuckets].some(idx=>WATT_BUCKETS[idx].test(w));});
   }
   items=sortItems(items);
